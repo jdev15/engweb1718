@@ -1,4 +1,4 @@
-[![Screen Shot](http://www.cesium.di.uminho.pt/assets/partners/um-d88cfa30a4e075c6c3576443927a6dca511abc435f91f1df88bc5aca6a8e2bc9.png)]
+![Screen Shot](http://www.cesium.di.uminho.pt/assets/partners/um-d88cfa30a4e075c6c3576443927a6dca511abc435f91f1df88bc5aca6a8e2bc9.png)
 # Projeto de Engenharia Web - Grupo X
 Repositório de todo o trabalho realizado no âmbito da UC de Engenharia Web
 
