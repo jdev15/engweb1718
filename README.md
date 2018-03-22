@@ -1,5 +1,5 @@
 ![Screen Shot](http://www.cesium.di.uminho.pt/assets/partners/um-d88cfa30a4e075c6c3576443927a6dca511abc435f91f1df88bc5aca6a8e2bc9.png)
-# Projeto de Engenharia Web - Grupo X
+# Projeto de Engenharia Web - Grupo 7
 Repositório de todo o trabalho realizado no âmbito da UC de Engenharia Web, no ano letivo de 2017/2018, na Universidade do Minho.
 
 ## Conteúdo
@@ -14,24 +14,17 @@ Aqui vamos guardar mockups, conceitos, código de *front-end* e *back-end* e out
 ## Ferramentas necessárias
 * GIT
 
-Versão Windows:
-```Versão Windows
-https://gitforwindows.org/
-```
-Versão Linux:
-```Versão Linux
-sudo apt-get install git
-```
+Versão Windows: https://gitforwindows.org/
+
+Versão Linux: sudo apt-get install git
 * Editor de texto (Sublime, VS Code, ...)
 ```Texto
 https://www.sublimetext.com/3
 https://code.visualstudio.com/
 ...
 ```
-* Balsamiq Desktop
-```Balsamiq
-https://balsamiq.com/products/
-```
+* Balsamiq Desktop: https://balsamiq.com/products/
+
 **NOTA** - Para melhorar a produtividade é recomendada a integração do GIT com o editor de texto.
 
 ### Como usar o GIT com o Sublime Text
