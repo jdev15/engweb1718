@@ -1,0 +1,9 @@
+Start:
+npm start
+
+Build
+npm build
+
+
+Changes:
+Everything start from the file src/App.js called from public/index.html

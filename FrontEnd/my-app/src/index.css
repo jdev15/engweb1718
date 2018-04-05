@@ -1,0 +1,105 @@
+/* global */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  background-color: #eee;
+}
+
+/* main */
+.todo-app {
+  margin: 30px auto;
+  width: 80%;
+  min-width: 320px;
+  max-width: 640px;
+  transform: scale(.5);
+  transform-origin: 0 0;
+}
+
+.title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 4em;
+  margin: 0;
+  color: #00ADB5;
+}
+
+.todos {
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+}
+
+/* input */
+.add-todo {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 100;
+  border: 1px solid #eee;
+}
+
+/* list */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+}
+
+/* item */
+.todo-item {
+  background-color: #222831;
+  color: white;
+  border-top: 1px solid #393E46;
+  font-size: 1em;
+  display: flex;
+}
+
+.todo-item:hover {
+  background-color: #393E46;
+}
+
+.todo-item .description {
+  padding: 10px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+.todo-item.done .description {
+  color: #00ADB5;
+  text-decoration: line-through;
+}
+
+.todo-item .remove {
+  visibility: hidden;
+  padding: 10px 20px 10px 0;
+}
+
+.todo-item .remove:hover {
+  color: #FFB6B9;
+}
+
+.todo-item:hover .remove {
+  visibility: visible;
+}
+
+/* options */
+.options {
+  font-size: 2em;
+  text-align: center;
+}
+
+.clean-todos, .load-todos, .save-todos {
+  padding: 5px;
+  display: inline-block;
+}
+
+/* filters */
+.filters {
+  font-size: 1em;
+  text-align: center;
+  padding: 5px;
+}
