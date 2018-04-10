@@ -1,9 +1,11 @@
-import './index.css';
-
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-//import TodoApp from './TodoApp.js';
-import App from './App.js';
+import { BrowserRouter } from 'react-router-dom'
+import App from './components/App';
+import './css/main.css';
 
-
-ReactDOM.render(<App title='react todos' />, document.getElementById('root'));
+ReactDOM.render((
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+), document.getElementById('root'));

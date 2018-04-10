@@ -1,0 +1,17 @@
+
+
+#headerIndice{
+	height: 150px;
+	margin-bottom: 10px;
+	position: relative;
+	left: 50%;
+	width: 350px;
+}
+
+.btn{
+	margin-right: 35px;
+}
+
+.btn-default{
+	width: 150px !important;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Window from './Window.js';
 import './activeframe.css';
 
 class ActiveList extends Component{ 

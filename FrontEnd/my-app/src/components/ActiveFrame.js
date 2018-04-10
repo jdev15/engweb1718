@@ -5,44 +5,47 @@ import './activeframe.css';
 
 class ActiveFrame extends Component{
 
-	constructor(props){
-		super(props);
-		this.state = {
-			data:[ 
-			{
-				id:'AMZ',
-				name: 'AMZ',
-				img: 'default.png',
-				type:'Action action',
-				sell_price: 10.5,
-				variation: [ -0.2,0.5,0.1],
+constructor(props){
+  super(props);
+  this.state = {
+    data: [
+      {
+        id: 'AMZ',
+        name: 'AMZ',
+        img: 'default.png',
+        type: 'Action action',
+        sell_price: 10.5,
+        variation: [-0.2, 0.5, 0.1],
 
-			},
-			{
-				id:'APPZ',
-				name: 'APPZ',
-				img: 'default.png',
-				type:'Action action',
-				sell_price: 99.5,
-				variation: [ -0.5,0.1,0.0],
+      },
+      {
+        id: 'APPZ',
+        name: 'APPZ',
+        img: 'default.png',
+        type: 'Action action',
+        sell_price: 99.5,
+        variation: [-0.5, 0.1, 0.0],
 
-			},{
-				id:'ETHER',
-				name: 'ETHEREUM',
-				img: 'default.png',
-				type:'Action action',
-				sell_price: 1000.33,
-				variation: [ -0.5,-0.1,-1.0],
+      },
+      {
+        id: 'ETHER',
+        name: 'ETHEREUM',
+        img: 'default.png',
+        type: 'Action action',
+        sell_price: 1000.33,
+        variation: [-0.5, -0.1, -1.0],
 
-			}],
-			updated: false,
-			search_text:'',
-			search_type:'',
-			selected_variation: '0',
-			update_interval: 500 //ms
+      }
+    ],
+    updated: false,
+    search_text: '',
+    search_type: '',
+    selected_variation: '0',
+    update_interval: 500 //ms
 
-		}
-	}
+  }
+}
+
 
 	handleSelectedChange(){
 		const docelem = document.getElementById("variacao_select");
@@ -57,6 +60,7 @@ class ActiveFrame extends Component{
 			search_type:type
 		})
 	}
+
 
 	render(){
 		return (
@@ -93,6 +97,7 @@ class ActiveFrame extends Component{
 						filter_text= {this.state.search_text}
 						filter_type= {this.state.search_type}
 						variation_time={ this.state.selected_variation}
+						isLoggedIn= {() => this.props.loggedIn}
 				 />
 			</div>
 			</div>)
