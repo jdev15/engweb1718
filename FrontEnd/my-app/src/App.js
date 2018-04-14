@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ActiveFrame from './ActiveFrame.js'
 
 class App extends Component {
   render() { 
@@ -15,11 +16,16 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
       </div>
-    );*/
+    );*//*
     return ( 
       <div className="TodoApp">
       <TodoApp title='react todos' />
       </div> )
+      */
+    return ( 
+          <div className="activeFrame">
+          <ActiveFrame />
+          </div>)
   }
 }
 
