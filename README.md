@@ -24,6 +24,7 @@ https://code.visualstudio.com/
 ...
 ```
 * Balsamiq Desktop: https://balsamiq.com/products/
+* Node.JS: https://nodejs.org/en/
 
 **NOTA** - Para melhorar a produtividade é recomendada a integração do GIT com o editor de texto.
 
