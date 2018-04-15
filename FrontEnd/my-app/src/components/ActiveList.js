@@ -13,7 +13,7 @@ class ActiveList extends Component{
 
 	filter_data_byName(data){
 		const text = this.props.filter_text.toUpperCase();
-		return data.filter( data_row => data_row.name.indexOf(text) !== -1);
+		return data.filter( data_row => data_row.id.indexOf(text) !== -1);
 	}
 	filter_data_byType(data){
 		return data.filter( data_row => data_row.type.indexOf(this.props.filter_text) !== -1);
@@ -34,7 +34,7 @@ class ActiveList extends Component{
 		return toShowData.map( data => ( <div id="new_row" key={data.name}>
 										 <li id="row_image"><img src={data.img} alt={data.name}></img></li>
 						   				 <li id="row_name">{data.name}</li>
-						   				 <li id="row_variation">{data.variation[variation]}</li>
+						   				 <li id="row_variation" className={ data.variation[variation] < 0 ? 'down' : 'up' } >{data.variation[variation]}</li>
 						   				 <li id="row_selling_price">{data.sell_price}</li>
 						   				 <li id="row_buying_price">{(data.sell_price * 1.02).toFixed(2)}</li>
 						   				 </div> ) 

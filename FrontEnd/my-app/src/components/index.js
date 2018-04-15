@@ -11,7 +11,7 @@ class Index extends React.Component {
    constructor(props){
    	super(props);
    	this.state= {
-   		logedIn: Number(this.props.logedIn) == 1
+   		logedIn: Number(this.props.logedIn) === 1
    	}
    }
 
@@ -22,9 +22,9 @@ class Index extends React.Component {
         </div>)
   }
 
-  handleLogin(){
+  handleLogin(value){
   	this.setState({
-  		logedIn:false
+  		logedIn:value
   	})
   }
 
@@ -36,7 +36,7 @@ class Index extends React.Component {
       <div>
         <Switch>
           <Route path='/SignIn' component={SignIn}/>
-          <Route path='/Login' onLogin={() => this.handleLogin()} component={Login}/>
+          <Route path='/Login' onLogin={(value) => this.handleLogin()} component={Login}/>
           <Route exact path='/' loggedIn={this.state.logedIn} render= { (props) => this.renderPageOne(props) }/>
           <Route path='/' component={PageTwo}/>
           <Route path='/' component={PageThree}/>

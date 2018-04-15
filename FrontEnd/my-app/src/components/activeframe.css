@@ -1,3 +1,10 @@
+.up{
+	color: green;
+}
+
+.down{
+	color: red;
+}
 
 
 #my_list{
@@ -105,21 +112,24 @@ img {
 	min-width: 15%;
 	height: 100%;
 	position: relative;
-	left: -3%;
+	/*left: -3%;*/
+	left: 1%;
 }
 
 .buyprice-header{
 	align-content: center;
 	min-width: 19%;
 	position: relative;
-	left: -11%;
+	/*left: -11%;*/
+	left: -7%;
 
 }
 .sellprice-header{
 	align-content: center;
 	min-width: 19%;
 	position: relative;
-	left: -7%;
+	/*left: -7%;*/
+	left: -3%;
 }
 
 /*
@@ -174,3 +184,4 @@ img {
 }
 
 }
+

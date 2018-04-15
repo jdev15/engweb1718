@@ -16,7 +16,6 @@ constructor(props){
         type: 'Action action',
         sell_price: 10.5,
         variation: [-0.2, 0.5, 0.1],
-
       },
       {
         id: 'APPZ',
@@ -35,6 +34,14 @@ constructor(props){
         sell_price: 1000.33,
         variation: [-0.5, -0.1, -1.0],
 
+      },
+            {
+        id: 'Nothing',
+        name: 'NOTHING',
+        img: 'default.png',
+        type: 'Currencie Currencies currencie',
+        sell_price: 2.5,
+        variation: [0.4, 2.1, 1.1],
       }
     ],
     updated: false,
@@ -44,7 +51,10 @@ constructor(props){
     update_interval: 500 //ms
 
   }
+  props.fetchdata();
+
 }
+  
 
 
 	handleSelectedChange(){
@@ -93,7 +103,7 @@ constructor(props){
 			</div>
 			<div className="activeList" >
 				<ActiveList 
-						data= {this.state.data}
+						data= {/*this.state.data*/this.props.data}
 						filter_text= {this.state.search_text}
 						filter_type= {this.state.search_type}
 						variation_time={ this.state.selected_variation}
