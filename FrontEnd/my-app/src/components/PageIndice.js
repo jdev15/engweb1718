@@ -15,6 +15,7 @@ constructor(props){
 
   
   getData(){ 
+    /*
     return fetch("https://api.coinmarketcap.com/v1/ticker/?limit=20")
     .then( (response) => response.json())
     .then( (responsejson) => {
@@ -30,7 +31,18 @@ constructor(props){
       })
       .catch( function(err) {
              console.log( err);
-      });
+      });*/
+    var stockInfo = [];
+    for(var i in initStocks) {
+      const stock = initStocks[i];
+      const api_call = await fetch(`https://api.iextrading.com/1.0/stock/${stock}/quote`);
+      const data = await api_call.json();
+      stockInfo.push(data);
+    }
+    console.log(stockInfo);
+    this.setState({
+      data: stockInfo,
+    });
   }
 
 
@@ -51,7 +63,7 @@ constructor(props){
 
 
 	render(){ 
-  /*
+  
 		return (
       <div>
 			 <div className="header_topIndice">
@@ -62,7 +74,7 @@ constructor(props){
       </div>
       </div>
       );
-*/
+/*
     return (
       <div>
        <div className="header_topIndice">
@@ -72,7 +84,7 @@ constructor(props){
          <TabelaAtivos />
       </div>
       </div>
-      );
+      );*/
 	}
 
 
