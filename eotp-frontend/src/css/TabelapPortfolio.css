@@ -1,0 +1,22 @@
+
+
+
+.tabela_portfolio{
+    width: 80%;
+    min-width:450px;
+    background: transparent;
+}
+
+.trash_icon{
+    position: relative;
+    left:49%;
+}
+
+
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: rgba(0,0,0,.05);
+}
+
+.rt-tr-group:hover {
+    background: lightslategrey;
+}

@@ -1,0 +1,126 @@
+html {
+  background-image: url("WS.jpg");
+  background-repeat: no-repeat;
+}
+
+#root {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: #2B3060;
+  text-align: center;
+}
+
+button {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: #2B3060;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 16px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 4px 2px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+  opacity: 0.6;
+  display: inline-block;
+  position: relative;
+  margin: -35px;
+}
+
+button:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;  
+  top: 7px;
+  right: -15px;
+  transition: 0.5s;
+}
+
+button:hover{
+  opacity: 1;
+}
+
+button:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-header {
+  background: #2B3060;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="submit"] {
+  background: #2B3060;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.login input[type="submit"]:hover {
+  background: #2B3060;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.login input[type="submit"]:focus {
+  border-color: #2B3060;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 80px;
+  color: #2B3060;
+}

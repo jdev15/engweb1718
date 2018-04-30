@@ -1,0 +1,15 @@
+h1, p {
+  font-family: 'Yanone Kaffeesatz', sans-serif !important;;
+}
+
+.btn-default {
+    font-size: 20px;
+    width: 300px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+body {
+  background-image: url(../fundo.jgp);
+}

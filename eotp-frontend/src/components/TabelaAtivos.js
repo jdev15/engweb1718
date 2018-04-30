@@ -2,10 +2,23 @@ import React from 'react';
 import { Table, Row, Cell } from 'react-responsive-table';
 //css
 import '../css/TabelaAtivos.css';
+import PageIndice from './PageIndice.js';
 
 //com possibilidade de nao usar react-responsive-table
 class TabelaAtivos extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
   render() {
+    return (
+        <div>
+          <PageIndice isLoggedIn={ this.props.isLoggedIn} />
+        </div>
+    )
+  }
+
+ /* render() {
     return (
       <div>
         <Table>
@@ -30,7 +43,7 @@ class TabelaAtivos extends React.Component {
         </Table>
       </div>
     );
-  }
+  }*/
 }
 
 export default TabelaAtivos;

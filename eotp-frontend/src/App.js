@@ -2,6 +2,7 @@ import React from 'react';
 //components
 import TabelaAtivos from './components/TabelaAtivos';
 import SideBar from './components/SideBar';
+import TabelaPortfolio from './Portfolio/TabelaPortfolio.js'
 //styles
 //import './css/App.css';
 
@@ -30,13 +31,24 @@ class App extends React.Component {
   };
 
   render() {
-    return (
+      return (
+          <div>
+              <TabelaPortfolio data={[{
+                  name:"APPLE",
+                  close_price:"325.6",
+                  open_price:"325.96",
+                  sell_price: "321.77",
+                  invested: "100"
+              }]}/>
+          </div>
+      );
+   /* return (
       <div>
         <SideBar />
-        <TabelaAtivos tableInfo={this.state.stocks}/>
+        <TabelaAtivos isLoggedIn={false} />
         <button onClick = {() => this.processStocks()}>Update Table (Temp)</button>
       </div>
-    );
+    );*/
   }
 }
 

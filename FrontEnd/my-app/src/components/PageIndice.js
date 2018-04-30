@@ -9,13 +9,13 @@ constructor(props){
   super(props);
   this.state = {
     data: [],
-    isLoading:true
+    timervar: undefined
   }
 }
 
   
   getData(){ 
-    /*
+
     return fetch("https://api.coinmarketcap.com/v1/ticker/?limit=20")
     .then( (response) => response.json())
     .then( (responsejson) => {
@@ -31,7 +31,7 @@ constructor(props){
       })
       .catch( function(err) {
              console.log( err);
-      });*/
+      });/*
     var stockInfo = [];
     for(var i in initStocks) {
       const stock = initStocks[i];
@@ -42,7 +42,7 @@ constructor(props){
     console.log(stockInfo);
     this.setState({
       data: stockInfo,
-    });
+    });*/
   }
 
 
@@ -63,7 +63,7 @@ constructor(props){
 
 
 	render(){ 
-  
+    
 		return (
       <div>
 			 <div className="header_topIndice">
