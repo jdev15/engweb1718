@@ -1,7 +1,7 @@
 import React from 'react';
 //components
-import SideBar from './SideBar';
-import TopBar from './TopBar';
+import SideBar from './common/SideBar';
+import TopBar from './common/TopBar';
 import TabelaHistorico from './TabelaHistorico';
 
 class Historico extends React.Component {

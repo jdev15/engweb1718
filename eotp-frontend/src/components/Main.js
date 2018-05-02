@@ -7,7 +7,7 @@ import Historico from './Historico';
 import TabelaInicial from './TabelaInicial';
 import TabelaInvestimento from './TabelaInvestimento';
 import TabelaHistorico from './TabelaHistorico';
-import SideBar from './SideBar';
+import SideBar from './common/SideBar';
 import SideBarLogedin from './SideBarLogedin';
 
 function Main(props) {

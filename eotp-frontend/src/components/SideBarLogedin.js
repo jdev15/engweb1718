@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, WrappedLink } from 'react-router-dom';
+import { Link/*, WrappedLink*/ } from 'react-router-dom';
 import '../css/SideBarLogedin.css';
 
 function SideBarLogedin(props) {

@@ -1,8 +1,8 @@
 import React from 'react';
-import SideBarLogedin from './SideBarLogedin'
+import SideBarLogedin from '../SideBarLogedin'
 import { slide as Menu } from 'react-burger-menu'
 //css
-import '../css/SideBar.css';
+import '../../css/SideBar.css';
 
 class SideBar extends React.Component {
   state = {
@@ -23,7 +23,7 @@ class SideBar extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className='sb'>
         <Menu
           isOpen={this.state.menuOpen}
           onStateChange={(state) => this.handleStateChange(state)}

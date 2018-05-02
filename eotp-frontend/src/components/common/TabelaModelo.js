@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
 import 'react-table/react-table.css';
-import Window from './Window.js'
-import '../css/TabelaModelo.css'
+import Window from '../Window.js'
+import '../../css/TabelaModelo.css'
 
 
 class TabelaModelo extends  Component{
@@ -59,4 +59,4 @@ class TabelaModelo extends  Component{
 }
 
 
-export default TabelaModelo
+export default TabelaModelo;
