@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import '../css/window.css'
 import 'bootstrap/dist/css/bootstrap.css';
@@ -87,7 +87,7 @@ class Window extends React.Component {
                 <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
                     <ModalHeader toggle={this.props.toggle}>
                         Abertura de Posições
-                        <a href="#" title="Informações" data-toggle="popover" data-trigger="hover" data-content="A abertura de posições está dependente do saldo monetário presente à data da abertura."><i className="fa fa-info">Info</i>
+                        <a href="about:blank" title="Informações" data-toggle="popover" data-trigger="hover" data-content="A abertura de posições está dependente do saldo monetário presente à data da abertura."><i className="fa fa-info">Info</i>
                         </a>
                     </ModalHeader>
                     <ModalBody>

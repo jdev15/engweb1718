@@ -1,0 +1,8 @@
+.sbli a:link {
+  font-style: 'Yanone Kaffeesatz', sans-serif !important;
+  color: #b8b7ad;
+  padding: 0.8em;
+  overflow: hidden;
+  display: block;
+  text-decoration:none; 
+}
