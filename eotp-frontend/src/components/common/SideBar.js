@@ -1,20 +1,25 @@
 import React from 'react';
-import SideBarLogedin from '../SideBarLogedin';
 import SideBarLogedout from '../SideBarLogedout';
-import { slide as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu';
+import { Link } from 'react-router-dom';
 //css
 import '../../css/SideBar.css';
 
 class SideBar extends React.Component {
   state = {
     menuOpen: false,
-    isLoggedIn: false
+    isLoggedIn: false,
   }
 
-  changeLogin = () => {
+  isLoggedIn = () => {
+    return this.state.isLoggedIn;
+  }
+
+  changeLoginState = () => {
+    console.log(this.state.isLoggedIn);
     this.setState({
       isLoggedIn: true,
-    });
+    })
   }
 
   handleStateChange = (state) => {
@@ -36,8 +41,20 @@ class SideBar extends React.Component {
         <Menu
         isOpen={this.state.menuOpen}
         onStateChange={(state) => this.handleStateChange(state)}
+        closeMenu={() => this.closeMenu()}
         >
-        <SideBarLogedin />
+        <div className="sbli">
+          <Link to='/TabelaInicial'>
+            <a onClick={() => this.closeMenu()}>Watchlist</a>
+          </Link>
+          <Link to='/TabelaInvestimento'>
+            <a onClick={() => this.closeMenu()}>Portfolio</a>
+          </Link>
+          <Link to='/TabelaHistorico'>
+            <a onClick={() => this.closeMenu()}>Histórico</a>
+          </Link>
+            <a>Gerir Perfil</a>
+        </div>
         </Menu>
         </div>
         );
@@ -49,7 +66,7 @@ class SideBar extends React.Component {
         isOpen={this.state.menuOpen}
         onStateChange={(state) => this.handleStateChange(state)}
         >
-        <SideBarLogedout changeLogin={()=>this.changeLogin()}/>
+        <SideBarLogedout changeLogin={()=>this.changeLoginState()}/>
         </Menu>
         </div>
         );
