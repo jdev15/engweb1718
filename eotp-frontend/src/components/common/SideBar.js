@@ -2,14 +2,21 @@ import React from 'react';
 import SideBarLogedout from '../SideBarLogedout';
 import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
+import Profile from '../Profile'
 //css
 import '../../css/SideBar.css';
 
 class SideBar extends React.Component {
-  state = {
+  constructor(props){
+  super(props);
+  this.state = {
     menuOpen: false,
     isLoggedIn: false,
+    showModal:false
   }
+
+  this.close = this.close.bind(this);
+}
 
   isLoggedIn = () => {
     return this.state.isLoggedIn;
@@ -34,6 +41,12 @@ class SideBar extends React.Component {
     this.setState({menuOpen: !this.state.menuOpen})
   }
 
+  close(){
+    this.setState({
+          showModal:!this.state.showModal
+    })
+  }
+
   render() {
     if(this.state.isLoggedIn) {
       return(
@@ -53,9 +66,10 @@ class SideBar extends React.Component {
           <Link to='/TabelaHistorico'>
             <a onClick={() => this.closeMenu()}>Histórico</a>
           </Link>
-            <a>Gerir Perfil</a>
+            <a onClick={() =>{this.closeMenu(); this.close();}}>Gerir Perfil</a>
         </div>
         </Menu>
+        <Profile showModal={this.state.showModal} close={this.close} />
         </div>
         );
     }
@@ -68,6 +82,7 @@ class SideBar extends React.Component {
         >
         <SideBarLogedout changeLogin={()=>this.changeLoginState()}/>
         </Menu>
+
         </div>
         );
     }

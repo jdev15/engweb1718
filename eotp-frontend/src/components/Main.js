@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import SignIn from './SignIn';
-import TabelaInicial from './TabelaInicial';
-import TabelaInvestimento from './TabelaInvestimento';
-import TabelaHistorico from './TabelaHistorico';
+import TabelaInicial from './tables/TabelaInicial';
+import TabelaInvestimento from './tables/TabelaInvestimento';
+import TabelaHistorico from './tables/TabelaHistorico';
 
 function Main(props) {
   return(

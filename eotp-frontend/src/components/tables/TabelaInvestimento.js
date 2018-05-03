@@ -1,5 +1,5 @@
 import React from 'react';
-import TabelaModelo from './common/TabelaModelo.js'
+import TabelaModelo from '../common/TabelaModelo.js'
 
 
 const invCol = [

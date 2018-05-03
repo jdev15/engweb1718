@@ -1,5 +1,5 @@
 import React from 'react';
-import TabelaModelo from './common/TabelaModelo'
+import TabelaModelo from '../common/TabelaModelo'
 
 const histCol = [
 {
