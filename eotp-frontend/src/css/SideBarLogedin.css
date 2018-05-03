@@ -1,8 +1,27 @@
 .sbli a:link {
-  font-style: 'Yanone Kaffeesatz', sans-serif !important;
-  color: #b8b7ad;
+  font-family: 'Exo 2', sans-serif !important;
+  color: white;
   padding: 0.8em;
   overflow: hidden;
   display: block;
-  text-decoration:none; 
+  text-decoration: none; 
+}
+
+/* visited link */
+.sbli a:visited {
+    color: white;
+}
+
+/* mouse over link */
+.sbli a:hover {
+    color: white;
+}
+
+/* selected link */
+.sbli a:active {
+    color: white;
+}
+
+.sbli {
+	float: left;
 }

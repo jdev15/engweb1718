@@ -1,3 +1,13 @@
+body {
+    font-family: 'Exo 2', sans-serif !important;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    font-weight: bold;
+}
+
 .tabela_portfolio{
     background: transparent;
 }
@@ -10,6 +20,7 @@
 
 .table-striped tbody tr:nth-of-type(2n+1) {
     background-color: rgba(0,0,0,.05);
+    font-family: 'Exo 2', sans-serif !important;
 }
 
 .rt-tr-group:hover {
@@ -20,6 +31,7 @@
     -webkit-box-shadow: 0 2px 15px 0 rgba(0,0,0,0.15);
     box-shadow: 0 2px 15px 0 rgba(0,0,0,0.15);
     height: 60px;
+    font-family: 'Exo 2', sans-serif !important;
 }
 
 .ReactTable .rt-thead .rt-resizable-header-content {

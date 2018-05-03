@@ -1,12 +1,20 @@
 import React from 'react';
-import SideBarLogedin from '../SideBarLogedin'
+import SideBarLogedin from '../SideBarLogedin';
+import SideBarLogedout from '../SideBarLogedout';
 import { slide as Menu } from 'react-burger-menu'
 //css
 import '../../css/SideBar.css';
 
 class SideBar extends React.Component {
   state = {
-    menuOpen: false
+    menuOpen: false,
+    isLoggedIn: false
+  }
+
+  changeLogin = () => {
+    this.setState({
+      isLoggedIn: true,
+    });
   }
 
   handleStateChange = (state) => {
@@ -22,16 +30,30 @@ class SideBar extends React.Component {
   }
 
   render() {
-    return(
-      <div className='sb'>
+    if(this.state.isLoggedIn) {
+      return(
+        <div className='sb'>
         <Menu
-          isOpen={this.state.menuOpen}
-          onStateChange={(state) => this.handleStateChange(state)}
+        isOpen={this.state.menuOpen}
+        onStateChange={(state) => this.handleStateChange(state)}
         >
-          <SideBarLogedin />
+        <SideBarLogedin />
         </Menu>
-      </div>
-    );
+        </div>
+        );
+    }
+    else {
+      return(
+        <div className='sb'>
+        <Menu
+        isOpen={this.state.menuOpen}
+        onStateChange={(state) => this.handleStateChange(state)}
+        >
+        <SideBarLogedout changeLogin={()=>this.changeLogin()}/>
+        </Menu>
+        </div>
+        );
+    }
   }
 }
 

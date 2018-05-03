@@ -13,11 +13,13 @@ class TopBar extends React.Component {
     return (
 <nav className="tb">
 				<div className="navWide">
+				<div className="icon">
+      <i class="fas fa-power-off"></i>
+      </div>
 					<div className="wideDiv">
 					</div>
 				</div>
 				<div className="navNarrow">
-					<i className="fa fa-bars fa-2x" onClick={this.burgerToggle}></i>
 					<div className="narrowLinks">
 					</div>
 				</div>

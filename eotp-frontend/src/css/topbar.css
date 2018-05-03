@@ -1,8 +1,8 @@
 .tb {
-	background-color: black;
+	background-color: #013766;
 	overflow: hidden;
   margin-top: 0px !important;
-	padding: 1em;
+	padding: 0.4em;
 
 	a {
 		color: #FFF;
@@ -25,7 +25,7 @@
 				text-decoration: none;
 				display: inline-block;
 				// Adjust padding to increase/decrease the space between links.
-				padding: 0 2em;
+				padding: 0 2sem;
 			}
 		}
 	}
@@ -67,4 +67,10 @@
 			display: none;
 		}
 	}
+}
+
+.icon {
+  color: white;
+  float: right;
+  font-size: 20px;
 }

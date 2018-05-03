@@ -55,6 +55,9 @@ class TabelaInicial extends React.Component {
       }
       else four = '---';
     }
+    else {
+      one='---'; four='---';
+    }
     var a = {
       name: data_basic.symbol,
       var1d: data_day[data_day.length-1].changePercent,

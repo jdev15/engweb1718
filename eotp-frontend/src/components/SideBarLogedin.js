@@ -6,7 +6,7 @@ function SideBarLogedin(props) {
   return(
     <div className="sbli">
     <Link to='/Watchlist'>
-      <a>Watchlist</a>
+       <a>Watchlist</a>
     </Link>
     <Link to='/Portfolio'>
       <a>Portfolio</a>

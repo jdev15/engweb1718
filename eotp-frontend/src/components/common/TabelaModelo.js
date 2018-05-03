@@ -39,7 +39,7 @@ class TabelaModelo extends  Component{
     render(){
 
         return (
-            <div>
+            <div classname="table">
                 <div className={"tabela_portfolio"}>
                 <ReactTable data= { this.props.data ? this.props.data : []}
                             columns = {this.props.columns}

@@ -1,10 +1,10 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
-  width: 26px;
-  height: 20px;
+  width: 31px;
+  height: 25px;
   left: 10px;
-  top: 6px;
+  top: 9px;
   overflow: hidden;
 }
 
@@ -29,8 +29,8 @@
 
 /* General sidebar styles */
 .bm-menu {
-  font-style: 'Yanone Kaffeesatz', sans-serif !important;
-  background: #373a47;
+  font-style: 'Exo 2', sans-serif !important;
+  background: #013766;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
   overflow: hidden !important;
@@ -44,7 +44,7 @@
 
 /* Wrapper for item list */
 .bm-item-list {
-  font-style: 'Yanone Kaffeesatz', sans-serif !important;
+  font-style: 'Exo 2', sans-serif !important;
   color: #b8b7ad;
   padding: 0.8em;
   overflow: hidden;
@@ -52,12 +52,12 @@
 
 /* Styling of overlay */
 .bm-overlay {
-  background-color: white !important;
+  background-color: black !important;
   overflow: hidden;
-  opacity: 0.85;
+  opacity: 0.85 !important;
 }
 
 .sb a, p {
   font-size: 30px;
-  font-family: 'Yanone Kaffeesatz', sans-serif !important;
+  font-style: 'Exo 2', sans-serif !important;
 }

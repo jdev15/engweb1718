@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
 import Watchlist from './Watchlist';
+import SignIn from './SignIn';
 import Portfolio from './Portfolio';
 import Historico from './Historico';
 import TabelaInicial from './TabelaInicial';
@@ -15,6 +15,7 @@ function Main(props) {
     <main>
       <Switch>
       	<Route path='/Watchlist' component={Watchlist}/>
+        <Route path='/SignIn' component={SignIn}/>
         <Route path='/Portfolio' component={Portfolio}/>
         <Route path='/Historico' component={Historico}/>
       	<Route path='/SideBar' component={SideBar}/>
@@ -23,6 +24,7 @@ function Main(props) {
         <Route path='/TabelaInvestimento' component={TabelaInvestimento}/>
         <Route path='/TabelaHistorico' component={TabelaHistorico}/>
         <Route exact path='/' component={Watchlist}/>
+        <Route exact path='/' component={SignIn}/>
         <Route exact path='/' component={Historico}/>
         <Route exact path='/' component={Portfolio}/>
         <Route exact path='/' component={SideBar}/>
