@@ -48,10 +48,6 @@ class TabelaModelo extends  Component{
                             defaultPageSize={13}
                             />
                 </div>
-                <div className={"modal_close"}>
-                        <Window isOpen={this.state.modal} data={this.state.modal_data} toggle={this.toggle}/>
-                </div>
-                <Window/>
             </div>
         )
     }

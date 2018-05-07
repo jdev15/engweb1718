@@ -11,13 +11,13 @@ class SideBar extends React.Component {
   super(props);
   this.state = {
     menuOpen: false,
-    isLoggedIn: false,
+   // isLoggedIn: false,
     showModal:false
   }
 
   this.close = this.close.bind(this);
 }
-
+/*
   isLoggedIn = () => {
     return this.state.isLoggedIn;
   }
@@ -27,7 +27,7 @@ class SideBar extends React.Component {
     this.setState({
       isLoggedIn: true,
     })
-  }
+  }*/
 
   handleStateChange = (state) => {
     this.setState({menuOpen: state.isOpen})  
@@ -48,7 +48,7 @@ class SideBar extends React.Component {
   }
 
   render() {
-    if(this.state.isLoggedIn) {
+    if(this.props.isLoggedIn()) {
       return(
         <div className='sb'>
         <Menu
@@ -57,15 +57,15 @@ class SideBar extends React.Component {
         closeMenu={() => this.closeMenu()}
         >
         <div className="sbli">
-          <Link to='/TabelaInicial'>
-            <a onClick={() => this.closeMenu()}>Watchlist</a>
+          <Link to='/TabelaInicial' onClick={() => this.closeMenu()}>
+            Watchlist
           </Link>
-          <Link to='/TabelaInvestimento'>
-            <a onClick={() => this.closeMenu()}>Portfolio</a>
+          <Link to='/TabelaInvestimento' onClick={() => this.closeMenu()}>
+            Portfolio
           </Link>
-          <Link to='/TabelaHistorico'>
-            <a onClick={() => this.closeMenu()}>Histórico</a>
-          </Link>
+          <Link to='/TabelaHistorico onClick={() => this.closeMenu()}'>
+            Histórico
+          </Link >
             <a onClick={() =>{this.closeMenu(); this.close();}}>Gerir Perfil</a>
         </div>
         </Menu>
@@ -80,7 +80,7 @@ class SideBar extends React.Component {
         isOpen={this.state.menuOpen}
         onStateChange={(state) => this.handleStateChange(state)}
         >
-        <SideBarLogedout changeLogin={()=>this.changeLoginState()}/>
+        <SideBarLogedout changeLogin={()=>this.props.handle()}/>
         </Menu>
 
         </div>

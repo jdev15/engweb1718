@@ -1,19 +1,16 @@
 import React from 'react';
 import Main from './components/Main';
-import SideBar from './components/common/SideBar';
-import TopBar from './components/common/TopBar';
+
 
 class App extends React.Component {
-  state = {
-    
+  constructor(props){
+    super(props);
   }
 
   render() {
     return (
       <div>
-      <SideBar />
-      <TopBar />
-      <Main />
+       <Main/>
       </div>
       );
     }
