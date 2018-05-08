@@ -1,6 +1,7 @@
 import React from 'react';
 import TabelaModelo from '../common/TabelaModelo.js';
-import Window from '../Window.js'
+//import Window from '../Window.js'
+import Open from '../Open.js'
 //array inicial de stocs disponiveis
 const initStocks = ['AAPL', 'MSFT', 'IBM', 'NVDA', 'AMD', 'TSLA'];
 
@@ -178,12 +179,16 @@ class TabelaInicial extends React.Component {
         <TabelaModelo columns={this.createColumns()} data={this.state.stocks}/>
         <button type="button" onClick={() => this.processStocks()}>Testar API</button>
           <div className={"modal_close"}>
-              <Window isOpen={this.state.modal} data={this.state.modal_data} toggle={this.toggle}/>
+              <Open showModal={this.state.modal} data={this.state.modal_data} close={this.toggle}/>
           </div>
       </div>
     );
   }
-
+/*
+ <div className={"modal_close"}>
+              <Window isOpen={this.state.modal} data={this.state.modal_data} toggle={this.toggle}/>
+          </div>
+ */
 }
 
 export default TabelaInicial;

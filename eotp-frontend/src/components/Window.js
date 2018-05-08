@@ -113,11 +113,11 @@ class Window extends React.Component {
                         <h5>Quantia baseada no valor atual de mercado: 175€</h5>
                         <hr/>
                         <h6>Os valores considerados serão aqueles que constem do mercado no momento da abertura da posição, ou no momento em que o mesmo abrir.</h6><br/><br/>
-                        <Button onClick={this.close}>Abrir Posição</Button>
+                        <Button onClick={this.props.toggle}>Abrir Posição</Button>
 
                     </ModalBody>
                     <ModalFooter>
-                        <Button onClick={this.close}>Fechar</Button>
+                        <Button onClick={this.props.toggle}>Fechar</Button>
                     </ModalFooter>
                 </Modal>
             </div>
