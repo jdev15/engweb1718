@@ -2,33 +2,9 @@ import React from 'react';
 import TabelaModelo from '../common/TabelaModelo.js';
 //import Window from '../Window.js'
 import Open from '../Open.js'
+import '../../css/TabelaInicial.css';
 //array inicial de stocs disponiveis
-const initStocks = ['AAPL', 'MSFT', 'IBM', 'NVDA', 'AMD', 'TSLA'];
-
-const col = [
-{
-  Header: "Ativo",
-  accessor: "name"
-},
-{
-  Header: "Variação 1D (%)",
-  accessor: "var1d"
-},
-{
-  Header: "Variação 4H (%)",
-  accessor: "var4h"
-},
-{
-  Header: "Variação 1H (%)",
-  accessor: "var1h"
-},
-{
-  Header: "Preço de Venda ($)",
-  accessor:"sell_price"
-},{
-  Header: "Preço de Compra ($)",
-  accessor: "buy_price",
-}];
+var initStocks = ['AAPL', 'MSFT', 'IBM', 'NVDA', 'AMD', 'TSLA'];
 
 class TabelaInicial extends React.Component {
   constructor(props){
@@ -36,7 +12,8 @@ class TabelaInicial extends React.Component {
     this.state = {
           stocks: [],
           modal:false,
-          modal_data: undefined
+          modal_data: undefined,
+          ativo: '',
       };
       this.toggle = this.toggle.bind(this);
   }
@@ -124,26 +101,26 @@ class TabelaInicial extends React.Component {
                 {
                     Header: "Variação 1D (%)",
                     accessor: "var1d",
-                    Cell: (row) => ( <div onClick={()=> {console.log(row); this.updateState(row.original);}}> {row.original ? row.original.var1d: console.log(row)} </div> )
+                    Cell: (row) => ( <div onClick={()=> {this.updateState(row.original);}}> {row.original ? row.original.var1d: ""} </div> )
                 },
                 {
                     Header: "Variação 4H (%)",
                     accessor: "var4h",
-                    Cell: (row) => ( <div onClick={()=> {console.log(row); this.updateState(row.original);}}> {row.original ? row.original.var4h: ""} </div> )
+                    Cell: (row) => ( <div onClick={()=> {this.updateState(row.original);}}> {row.original ? row.original.var4h: ""} </div> )
                 },
                 {
                     Header: "Variação 1H (%)",
                     accessor: "var1h",
-                    Cell: (row) => ( <div onClick={()=> {console.log(row); this.updateState(row.original);}}> {row.original ? row.original.var1h: ""} </div> )
+                    Cell: (row) => ( <div onClick={()=> {this.updateState(row.original);}}> {row.original ? row.original.var1h: ""} </div> )
                 },
                 {
                     Header: "Preço de Venda ($)",
-                    accessor:"sell_price",Cell: (row) => ( <div onClick={()=> {console.log(row); this.updateState(row.original);}}> {row.original ? row.original.sell_price: ""} </div> )
+                    accessor:"sell_price",Cell: (row) => (<div onClick={()=> {this.updateState(row.original);}}> {row.original ? row.original.sell_price: ""} </div> )
 
                 },{
                     Header: "Preço de Compra ($)",
                     accessor: "buy_price",
-                    Cell: (row) => ( <div onClick={()=> {console.log(row); this.updateState(row.original);}}>  {row.original ? row.original.buy_price: ""} </div> )
+                    Cell: (row) => ( <div onClick={()=> {this.updateState(row.original);}}>  {row.original ? row.original.buy_price: ""} </div> )
                 }];
         else
             return [
@@ -173,14 +150,45 @@ class TabelaInicial extends React.Component {
     }
 
 
+  addAtivo(ativo) {
+    initStocks.push(ativo);
+  }
+
+  handleInputSubmit(event) {
+    this.setState({
+      ativo: event.target.value
+    });
+  }
+
+  handleReturnKey(event) {
+    const value = event.target.value;
+    if (event.key === 'Enter' && value !== '') {
+      this.addAtivo(this.state.ativo);
+      this.setState({ativo : ''});
+    }
+  }
+
   render(){
     return(
       <div>
         <TabelaModelo columns={this.createColumns()} data={this.state.stocks}/>
-        <button type="button" onClick={() => this.processStocks()}>Testar API</button>
           <div className={"modal_close"}>
               <Open showModal={this.state.modal} data={this.state.modal_data} close={this.toggle}/>
-          </div>
+          </div><br/><br/>
+          <footer className="footer">
+            <button type="button" onClick={() => this.processStocks()}>Testar API</button>
+            <a className="add">ADICIONAR ATIVOS</a>
+            <div className="icon">
+             <input
+                name="adiciona"
+                type="text"
+                placeholder="Símbolo NASDAQ"
+                value={this.state.ativo}
+                onChange={event => this.handleInputSubmit(event)}
+                onKeyPress={event => this.handleReturnKey(event)}
+                />
+            </div>
+          </footer>
       </div>
     );
   }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
 import 'react-table/react-table.css';
-import Window from '../Window.js'
 import '../../css/TabelaModelo.css'
 
 
@@ -39,13 +38,13 @@ class TabelaModelo extends  Component{
     render(){
 
         return (
-            <div classname="table">
+            <div className="table">
                 <div className={"tabela_portfolio"}>
                 <ReactTable data= { this.props.data ? this.props.data : []}
                             columns = {this.props.columns}
                             classnames="tabelaportfolio"
-                            pageSizeOptions={[5, 10, 13, 20, 25, 50, 100]}
-                            defaultPageSize={13}
+                            pageSizeOptions={[5, 10, 20, 25, 50, 100]}
+                            defaultPageSize={10}
                             />
                 </div>
             </div>

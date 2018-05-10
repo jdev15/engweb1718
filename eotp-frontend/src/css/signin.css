@@ -1,23 +1,17 @@
-#root {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  color: #2B3060;
-  text-align: center;
-}
-
-.login {
+.signin {
   width: 400px;
   margin: 16px auto;
   font-size: 16px;
 }
 
-.login-header,
-.login p {
+.signin-header,
+.signin p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.login-header {
-  background: #2B3060;
+.signin-header {
+  background: #013766;
   padding: 20px;
   font-size: 1.4em;
   font-weight: normal;
@@ -26,16 +20,24 @@
   color: #fff;
 }
 
-.login-container {
+.signin-container {
   background: #ebebeb;
   padding: 12px;
 }
 
-.login p {
+.signin p {
   padding: 12px;
 }
 
-.login input {
+.signin input[type="email"],
+.signin input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+  padding: 16px;
+}
+
+.signin input {
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -45,71 +47,104 @@
   padding: 16px;
   outline: 0;
   font-family: inherit;
-  font-size: 0.95em;
+  font-size: 0.4em;
 }
 
-.login input[name="fname"], .login input[name="lname"] {
+.signin input[name="fname"], .signin input[name="lname"] {
   box-sizing: border-box;
   float: left;
   width: 50%;
   height: 5px;
   border-width: 1px;
   border-style: solid;
-  padding: 16px;
   outline: 0;
   font-family: inherit;
-  font-size: 0.95em;
+  padding: 16px;
+  font-size: 0.7em;
 }
 
-.login input[type="email"],
-.login input[type="password"] {
+.signin input[type="email"]:focus,
+.signin input[type="password"]:focus {
+  border-color: #888;
+  padding: 16px;
+  font-size: 0.7em;
+}
+
+.signin input[type="text"] {
   background: #fff;
   border-color: #bbb;
+  padding: 16px;
   color: #555;
+  font-size: 0.4em;
 }
 
-.login input[type="email"]:focus,
-.login input[type="password"]:focus {
+.signin input[type="text"]:focus {
   border-color: #888;
+  padding: 16px;
+  font-size: 0.7em;
 }
 
-.login input[type="text"] {
-  background: #fff;
-  border-color: #bbb;
-  color: #555;
-}
-
-.login input[type="text"]:focus {
-  border-color: #888;
-}
-
-.login input[type="submit"] {
-  background: #2B3060;
+.signin input[type="submit"] {
+  background: #013766;
   border-color: transparent;
   color: #fff;
   cursor: pointer;
   opacity: 0.6;
+  font-size: 0.7em;
 }
 
-.login input[type="submit"]:hover {
-  background: #2B3060;
+.signin input[type="submit"]:hover {
+  background: #013766;
   opacity: 1;
+  padding: 16px;
   transition: 0.5s;
+  font-size: 0.7em;
 }
 
-.login input[type="submit"]:focus {
-  border-color: #2B3060;
+.signin input[type="submit"]:focus {
+  border-color: #013766;
+  padding: 16px;
+  font-size: 0.4em;
 }
 
-h1 {
+.signin h1 {
   margin-top: 0px;
   text-align: center;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 80px;
-  color: #2B3060;
+  color: #013766;
 }
 
-h3 {
+.signin h3 {
   margin: 0px;
   text-align: left;
+  font-size: 0.6em;
+}
+
+.bregisto {
+  font-family: 'Exo 2', sans-serif !important;
+  background-color: #013766;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px 16px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 4px 2px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+  opacity: 0.6;
+  display: inline-block;
+  position: relative;
+  margin: -35px;
+  width: 100%;
+}
+
+.bregisto:hover{
+  opacity: 1;
+}
+
+.signin #titulo {
+  font-size: 15px;
+  text-align: center;
 }

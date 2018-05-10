@@ -4,3 +4,8 @@
 #ModalHeader, .modal-backdrop {
   position: absolute;
 }
+
+input[type=text] {
+	width: 80%;
+	display: inline-block;
+}

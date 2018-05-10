@@ -23,11 +23,11 @@ class SideBarLogedout extends React.Component {
 
   render() {
     return (
-      <div class="login">
+      <div className="login">
 
-      <h2 class="login-header">Bem-Vindo</h2>
+      <h2 className="login-header">Bem-Vindo</h2>
 
-      <form class="login-container">
+      <form className="login-container">
       <p>
       Email
       <input
@@ -51,11 +51,13 @@ class SideBarLogedout extends React.Component {
       <p>
       <input onClick = {() => this.props.changeLogin()}
       type="submit"
-      value="LOGIN" />
+      value="Login" />
       </p>
       <p>
       <Link to='/SignIn'>
-        <button>Registe-se aqui</button>
+        <input
+      type="submit"
+      value="Registe-se Aqui" />
       </Link>
       </p>
       </form>

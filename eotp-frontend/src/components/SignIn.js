@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link/*, WrappedLink*/ } from 'react-router-dom';
+import '../css/signin.css'; 
 
 class SignIn extends Component {
     state = {
@@ -27,11 +28,12 @@ class SignIn extends Component {
 
     render() {
         return (
-          <div class="login">
+          <div className="signin">
+          <h3 id="titulo">Preencha os campos abaixo e usufrua da plataforma</h3>
 
-          <h2 class="login-header">Sign In</h2>
+          <h2 className="signin-header">Sign In</h2>
 
-          <form class="login-container">
+          <form className="signin-container">
             <p>
             <h3>Email</h3>
               <input
@@ -77,7 +79,7 @@ class SignIn extends Component {
                 placeholder="Último Nome"
                 onChange = {e => this.onChange(e)}
                 value = {this.state.lname}
-                 /><br/><br/>
+                 /><br/>
             </p>
              <p>
             <h3>Username</h3>
@@ -98,14 +100,10 @@ class SignIn extends Component {
                 onChange = {e => this.onChange(e)}
                 value = {this.state.tlm}
                  />
-            </p>
-            <p>
-            <Link to='/Watchlist'>
-              <input
-                type="submit"
-                value="Login" />
+            </p><br/>
+            <Link to='/TabelaInicial'>
+              <button className="bregisto">Registar</button>
             </Link>
-            </p>
           </form>
           </div>
         );

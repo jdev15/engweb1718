@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
+import '../css/window.css';
 
 class Open extends React.Component {
 
@@ -37,18 +37,9 @@ class Open extends React.Component {
       <div>
         <Modal isOpen={this.props.showModal} toggle={this.props.close}>
           <ModalHeader closeButton>
-            <h1>{this.state.nomeAtivo}</h1>
+            <h1>Abrir Posição</h1>
           </ModalHeader>
           <ModalBody>
-            <p>
-            <input
-                name="modalidade"
-                type="text"
-                placeholder="Quantia" 
-                onChange = {e => this.onChange(e)}
-                value = {this.state.depositar}
-                /> €
-            </p>
             <h5>Indique abaixo a quantia que pretende investir</h5>
             <p>
             <input
@@ -57,7 +48,7 @@ class Open extends React.Component {
                 placeholder="Quantia" 
                 onChange = {e => this.onChange(e)}
                 value = {this.state.investimento}
-                /> €
+                />&nbsp;&nbsp;&nbsp;€
             </p>
             <h5>Quantia baseada no valor atual de mercado: 175€</h5>
             <hr/>
@@ -65,7 +56,6 @@ class Open extends React.Component {
             <Button onClick={this.close}>Abrir Posição</Button>
           </ModalBody>
           <ModalFooter>
-            <Button onClick={this.props.close}>Guardar</Button>
             <Button onClick={this.props.close}>Fechar</Button>
           </ModalFooter>
         </Modal>

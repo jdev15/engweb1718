@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import '../css/Profile.css';
 
@@ -44,7 +44,7 @@ class Manager extends React.Component {
             <p>Gerir Conta</p>
           </ModalHeader>
           <ModalBody>
-            <h4>Dados da Conta</h4>
+            <h4>Dados da Conta</h4><br/>
 
             <h5>Email</h5>
             <input
@@ -52,23 +52,23 @@ class Manager extends React.Component {
               type="email"
               onChange = {e => this.onChange(e)}
               value = {this.state.email}
-            />
+            /><br/>
             <h5>Username</h5>
             <input
               name="username"
               type="text"
               onChange = {e => this.onChange(e)}
               value = {this.state.username}
-            />
+            /><br/>
             <h5>Password</h5>
             <input
               name="password"
               type="password"
               onChange = {e => this.onChange(e)}
               value = {this.state.password}
-            />
+            /><br/><br/>
 
-            <h4>Dados Pessoais</h4>
+            <h4>Dados Pessoais</h4><br/>
 
             <h5>Primeiro Nome</h5>
             <input
@@ -76,14 +76,14 @@ class Manager extends React.Component {
               type="text"
               onChange = {e => this.onChange(e)}
               value = {this.state.pnome}
-            />
+            /><br/>
             <h5>Último Nome</h5>
             <input
               name="lnome"
               type="text"
               onChange = {e => this.onChange(e)}
               value = {this.state.lnome}
-            />
+            /><br/>
             <h5>Telemóvel</h5>
             <input
               name="tlm"

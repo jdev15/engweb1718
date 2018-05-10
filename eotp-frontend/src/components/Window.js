@@ -84,42 +84,6 @@ class Window extends React.Component {
                         <Button onClick={this.props.toggle}>Fechar</Button>
                     </ModalFooter>
                 </Modal>
-                <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
-                    <ModalHeader toggle={this.props.toggle}>
-                        Abertura de Posições
-                        <a href="about:blank" title="Informações" data-toggle="popover" data-trigger="hover" data-content="A abertura de posições está dependente do saldo monetário presente à data da abertura."><i className="fa fa-info">Info</i>
-                        </a>
-                    </ModalHeader>
-                    <ModalBody>
-                        <h2>TESLA INC (-0.98%)</h2>
-                        <p>
-                            <input
-                                name="modalidade"
-                                type="text"
-                                placeholder="Quantia"
-                                onChange = {e => this.onChange(e)}
-                            /> €
-                        </p>
-                        <h5>Indique abaixo a quantia que pretende investir</h5>
-                        <p>
-                            <input
-                                name="investimento"
-                                type="text"
-                                placeholder="Quantia"
-                                onChange = {e => this.onChange(e)}
-                                value = {this.state.investimento}
-                            /> €
-                        </p>
-                        <h5>Quantia baseada no valor atual de mercado: 175€</h5>
-                        <hr/>
-                        <h6>Os valores considerados serão aqueles que constem do mercado no momento da abertura da posição, ou no momento em que o mesmo abrir.</h6><br/><br/>
-                        <Button onClick={this.props.toggle}>Abrir Posição</Button>
-
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button onClick={this.props.toggle}>Fechar</Button>
-                    </ModalFooter>
-                </Modal>
             </div>
         );
     }

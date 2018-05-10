@@ -63,10 +63,10 @@ class SideBar extends React.Component {
           <Link to='/TabelaInvestimento' onClick={() => this.closeMenu()}>
             Portfolio
           </Link>
-          <Link to='/TabelaHistorico onClick={() => this.closeMenu()}'>
+          <Link to='/TabelaHistorico' onClick={() => this.closeMenu()}>
             Histórico
-          </Link >
-            <a onClick={() =>{this.closeMenu(); this.close();}}>Gerir Perfil</a>
+          </Link>
+            <a onClick={() =>{this.closeMenu(); this.close();}} style={{cursor:'pointer'}}>Gerir Perfil</a>
         </div>
         </Menu>
         <Profile showModal={this.state.showModal} close={this.close} />
