@@ -1,0 +1,29 @@
+<html><head></head><body>
+	
+	<div id="hello"></div>
+
+<script type="text/javascript"> 
+	const text = "HELLO ANSWER ME";
+	/*
+	fetch('http://localhost:3000/api/ativos', 
+		{ method: 'post',
+		  headers: {
+      				'Content-Type': "text/plain",
+      				'charset':"UTF-8"
+    	},
+    	body: JSON.stringify('Hello how are you.')
+    })
+	.then(json => { console.log('Request sent with success', json); return json.text()})
+	.then(answer => { 
+		console.log(answer);
+		document.getElementById("hello").innerText = answer; })
+	.catch(error => console.log('Request failed',error));*/
+	fetch('http://localhost:3000/api/ativos', {
+    method: 'POST',body: 'asdddddasddssssssssssssssss'
+  })
+	.then(json => { console.log('Request sent with success', json); return json.text()})
+	.then(answer => { 
+		console.log(answer);
+		document.getElementById("hello").innerText = answer; })
+	.catch(error => console.log('Request failed',error));;
+</script></body></html>
