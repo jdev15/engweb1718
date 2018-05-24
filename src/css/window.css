@@ -1,6 +1,0 @@
-#ModalHeader {
-  position: relative;
-}
-#ModalHeader, .modal-backdrop {
-  position: absolute;
-}
