@@ -24,43 +24,41 @@ class SideBarLogedout extends React.Component {
   render() {
     return (
       <div className="login">
-
-      <h2 className="login-header">Bem-Vindo</h2>
-
-      <form className="login-container">
-      <p>
-      Email
-      <input
-      name="email"
-      type="email"
-      placeholder="Email" 
-      onChange = {e => this.onChange(e)}
-      value = {this.state.email}
-      />
-      </p>    
-      <p>
-      Password
-      <input
-      name = "password"
-      type="password"
-      placeholder="Password"
-      onChange = {e => this.onChange(e)}
-      value = {this.state.password}
-      />
-      </p>
-      <p>
-      <input onClick = {() => this.props.changeLogin()}
-      type="submit"
-      value="Login" />
-      </p>
-      <p>
-      <Link to='/SignIn'>
-        <input
-      type="submit"
-      value="Registe-se Aqui" />
-      </Link>
-      </p>
-      </form>
+        <h2 className="login-header">Bem-Vindo</h2>
+        <form className="login-container">
+          <p>
+            Email
+            <input
+            name="email"
+            type="email"
+            placeholder="Email" 
+            onChange = {e => this.onChange(e)}
+            value = {this.state.email}
+            />
+          </p>
+          <p>
+            Password
+            <input
+            name = "password"
+            type="password"
+            placeholder="Password"
+            onChange = {e => this.onChange(e)}
+            value = {this.state.password}
+            />
+          </p>
+          <p>
+            <input onClick = {() => this.props.changeLogin()}
+            type="submit"
+            value="Login" />
+          </p>
+          <p>
+            <Link to='/SignIn'>
+            <input
+            type="submit"
+            value="Registe-se Aqui" />
+            </Link>
+          </p>
+        </form>
       </div>
       );
   }

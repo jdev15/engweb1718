@@ -74,7 +74,7 @@
   text-decoration: none;
 }
 
-h1 {
+.login h1 {
   text-align: center;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 60px;

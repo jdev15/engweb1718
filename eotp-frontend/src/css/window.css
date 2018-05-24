@@ -8,4 +8,18 @@
 input[type=text] {
 	width: 80%;
 	display: inline-block;
+	padding: 10px;
+}
+
+.openpos p {
+	font-size: 16px;
+}
+
+
+#openpos_note {
+	font-size: 15px;
+}
+
+#openpos_value {
+	padding-top: 20px;
 }

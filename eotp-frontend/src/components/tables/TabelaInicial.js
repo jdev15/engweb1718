@@ -1,8 +1,11 @@
 import React from 'react';
+import { Button } from 'reactstrap';
+import Dollar from 'react-icons/lib/fa/dollar';
 import TabelaModelo from '../common/TabelaModelo.js';
 //import Window from '../Window.js'
 import Open from '../Open.js'
 import '../../css/TabelaInicial.css';
+
 //array inicial de stocs disponiveis
 var initStocks = ['AAPL', 'MSFT', 'IBM', 'NVDA', 'AMD', 'TSLA'];
 
@@ -89,64 +92,69 @@ class TabelaInicial extends React.Component {
           modal: true,
           modal_data:data
       })
+      console.log(data);
   }
 
   createColumns(){
-        if( this.props.isLoggedIn )
-            return [
-                {
-                    Header: "Ativo",
-                    accessor: "name"
-                },
-                {
-                    Header: "Variação 1D (%)",
-                    accessor: "var1d",
-                    Cell: (row) => ( <div onClick={()=> {this.updateState(row.original);}}> {row.original ? row.original.var1d: ""} </div> )
-                },
-                {
-                    Header: "Variação 4H (%)",
-                    accessor: "var4h",
-                    Cell: (row) => ( <div onClick={()=> {this.updateState(row.original);}}> {row.original ? row.original.var4h: ""} </div> )
-                },
-                {
-                    Header: "Variação 1H (%)",
-                    accessor: "var1h",
-                    Cell: (row) => ( <div onClick={()=> {this.updateState(row.original);}}> {row.original ? row.original.var1h: ""} </div> )
-                },
-                {
-                    Header: "Preço de Venda ($)",
-                    accessor:"sell_price",Cell: (row) => (<div onClick={()=> {this.updateState(row.original);}}> {row.original ? row.original.sell_price: ""} </div> )
+    if (this.props.isLoggedIn)
+      return [
+        {
+          Header: "Ativo",
+          accessor: "name"
+        },
+        {
+          Header: "Variação 1D (%)",
+          accessor: "var1d",
+        },
+        {
+          Header: "Variação 4H (%)",
+          accessor: "var4h",
+        },
+        {
+          Header: "Variação 1H (%)",
+          accessor: "var1h",
+        },
+        {
+          Header: "Preço de Venda ($)",
+          accessor:"sell_price",
 
-                },{
-                    Header: "Preço de Compra ($)",
-                    accessor: "buy_price",
-                    Cell: (row) => ( <div onClick={()=> {this.updateState(row.original);}}>  {row.original ? row.original.buy_price: ""} </div> )
-                }];
-        else
-            return [
-                {
-                    Header: "Ativo",
-                    accessor: "name"
-                },
-                {
-                    Header: "Variação 1D (%)",
-                    accessor: "var1d"
-                },
-                {
-                    Header: "Variação 4H (%)",
-                    accessor: "var4h"
-                },
-                {
-                    Header: "Variação 1H (%)",
-                    accessor: "var1h"
-                },
-                {
-                    Header: "Preço de Venda ($)",
-                    accessor:"sell_price"
-                },{
-                Header: "Preço de Compra ($)",
-                accessor: "buy_price",
-            }];
+        },{
+          Header: "Preço de Compra ($)",
+          accessor: "buy_price",
+        },
+        {
+          Header: 'Abrir Posição',
+          Cell: row => (
+              <Button color="primary" onClick={()=> {this.updateState(row.original);}}><Dollar /></Button>
+          ),
+          sortable: false,
+          style:{overflow:'visible'},
+        }];
+    else
+      return [
+        {
+          Header: "Ativo",
+          accessor: "name"
+        },
+        {
+          Header: "Variação 1D (%)",
+          accessor: "var1d"
+        },
+        {
+          Header: "Variação 4H (%)",
+          accessor: "var4h"
+        },
+        {
+          Header: "Variação 1H (%)",
+          accessor: "var1h"
+        },
+        {
+          Header: "Preço de Venda ($)",
+          accessor:"sell_price"
+        },{
+          Header: "Preço de Compra ($)",
+          accessor: "buy_price",
+      }];
     }
 
 
@@ -192,11 +200,6 @@ class TabelaInicial extends React.Component {
       </div>
     );
   }
-/*
- <div className={"modal_close"}>
-              <Window isOpen={this.state.modal} data={this.state.modal_data} toggle={this.toggle}/>
-          </div>
- */
 }
 
 export default TabelaInicial;
