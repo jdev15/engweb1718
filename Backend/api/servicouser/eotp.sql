@@ -20,7 +20,7 @@ USE `eotp` ;
 CREATE TABLE IF NOT EXISTS `eotp`.`User` (
   `Username` VARCHAR(45) NOT NULL,
   `Email` VARCHAR(45) NOT NULL,
-  `Password` VARCHAR(45) NOT NULL,
+  `Password` TEXT NOT NULL,
   `PrimeiroNome` VARCHAR(45) NOT NULL,
   `UltimoNome` VARCHAR(45) NOT NULL,
   `Telemovel` INT NOT NULL,

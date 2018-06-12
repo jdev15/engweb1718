@@ -1,40 +1,26 @@
 const express = require('express');
 const cors = require('cors');
-const mysqlx = require('@mysql/xdevapi');
-var bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+var bodyParser = require('body-parser');
+
+const sql = require('./common/dbaccess.js');
+const user = require('./routes/user');
 
 const app = express();
+var db;
 
 app.use(cors());
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use('/user', user); //para aceder aos metodos de user
 
-const config = {
-  user: 'root',
-  password: '',
-  host: 'localhost',
-  port: 33060,
-  schema: 'eotp'
-};
-
-var db={};
-
-async function connectDB() {
-  let session;
-  try{
-    session = await mysqlx.getSession(config);
-    db = await session.getSchema(config.schema);
-    console.log(session.inspect(), db);
-  }
-  catch (err) {
-    console.error('ERROR: '+err.message);
-  }
-}
-
-app.listen(4000, () => {
-  connectDB();
+app.listen(4000, async () => {
+  await sql.connectDB();
+  db = await sql.dbAccess();
+  user.getDB(db); //definir db no modulo user
   console.log('Listening on port 4000');
+  console.log(db);
 });
 
 app.get('/', (req, res) => {
@@ -45,6 +31,8 @@ app.get('/users', async (req, res) => {
   var values = [];
   await db.getTable('user').select().execute((res)=>{
     for(i=0; i<res.length; i++) {
+      var CC = {};
+      if(res[i+6]) CC = res[i+6].trim();
       values.push({
         username: res[i++].trim(),
         email: res[i++].trim(),
@@ -52,24 +40,12 @@ app.get('/users', async (req, res) => {
         firstName: res[i++].trim(),
         lastName: res[i++].trim(),
         phoneNum: res[i++],
-        creditCard: res[i++].trim(),
-        plafond: res[i],
+        creditCard: CC,
+        plafond: res[++i],
       });
   }
   });
   res.json({
     data: values,
-  });
-});
-
-
-app.post('/login', (req, res) => {
-  console.log(req.body);
-  res.send(req.body);
-});
-
-app.post('/register', (req, res) => {
-  res.json({
-    message: 'Registered User!',
   });
 });
