@@ -94,8 +94,9 @@ router.get('/', function(req, res, next) {
 
 }
 );
+
 // get on /api/ativos/from/
-// operações suportadas ?
+// Recupera os ultimos valores de certos ativos.
 // query = sym1,sym2,sym3...
 // sort = 1 ou -1
 // limit = number
