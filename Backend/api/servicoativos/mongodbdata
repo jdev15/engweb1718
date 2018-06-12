@@ -53,4 +53,32 @@
 {
 	"name":	"Global X MSCI Portugal (PGAL)",
 	"symbol":"PGAL"
+},
+{
+	"name":	"Alphabet Inc.(GOOGL)",
+	"symbol":"GOOGL"
+},
+{
+	"name":	"Alibaba Group Holding Limited(BABA)",
+	"symbol":"BABA"
+},
+{
+	"name":	"International Business Machines Corporation(IBM)",
+	"symbol":"IBM"
+},
+{
+	"name":	"Abraxas Petroleum Corporation(AXAS)",
+	"symbol":"AXAS"
+},
+{
+	"name":	"Total S.A.(TOT)",
+	"symbol":"TOT"
+},
+{
+	"name":	"First Majestic Silver Corp. (Canada)(AG)",
+	"symbol":"AG"
+},
+{
+	"name":	"Randgold Resources Limited(GOLD)",
+	"symbol":"GOLD"
 }

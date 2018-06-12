@@ -11,20 +11,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="85" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="85" />
+            <state relative-caret-position="51">
+              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TabelaInicial.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TabelaInicial.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/tables/TabelaInicial.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="95" />
+            <state relative-caret-position="293">
+              <caret line="186" column="69" selection-start-line="186" selection-start-column="69" selection-end-line="186" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -52,6 +52,7 @@
       <find>getCell</find>
       <find>data_basic</find>
       <find>data_hours</find>
+      <find>processStocks</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -68,7 +69,6 @@
         <option value="$PROJECT_DIR$/src/Portfolio/TabelaPortfolio.js" />
         <option value="$PROJECT_DIR$/src/components/TableReact.js" />
         <option value="$PROJECT_DIR$/src/Portfolio/Window.js" />
-        <option value="$PROJECT_DIR$/src/components/Main.js" />
         <option value="$PROJECT_DIR$/src/components/common/SideBar.js" />
         <option value="$PROJECT_DIR$/src/components/common/TabelaModelo.js" />
         <option value="$PROJECT_DIR$/src/components/Open.js" />
@@ -77,6 +77,7 @@
         <option value="$PROJECT_DIR$/src/css/topbar.css" />
         <option value="$PROJECT_DIR$/src/components/common/TopBar.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/Main.js" />
       </list>
     </option>
   </component>
@@ -94,9 +95,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
-    <option name="width" value="979" />
+    <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
@@ -104,8 +105,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -135,7 +137,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,14 +232,16 @@
       <workItem from="1527682980779" duration="623000" />
       <workItem from="1528224314573" duration="699000" />
       <workItem from="1528365767926" duration="1016000" />
+      <workItem from="1528801867028" duration="1910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46372000" />
+    <option name="totallyTimeSpent" value="48282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -279,7 +282,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/../FrontEnd/my-app/src/components/ActiveFrame.js</url>
+          <url />
           <line>9</line>
         </line-breakpoint>
       </breakpoints>
@@ -295,13 +298,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Window.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/temp/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -471,9 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="119" column="58" selection-start-line="119" selection-start-column="58" selection-end-line="119" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -505,17 +499,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Main.js">
+    <entry file="file://$PROJECT_DIR$/src/components/tables/TabelaInicial.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="85" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="85" />
+        <state relative-caret-position="293">
+          <caret line="186" column="69" selection-start-line="186" selection-start-column="69" selection-end-line="186" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/tables/TabelaInicial.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="95" />
+        <state relative-caret-position="51">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
         </state>
       </provider>
     </entry>
