@@ -102,7 +102,7 @@ router.get('/', function(req, res, next) {
 // limit = number
 router.get('/from/', function(req,res,next){
 	console.log(req.query);
-	if(!isConnected(req)false) {
+	if(!isConnected(req)) {
 		sendErrorMsg(res);
 	}else{
 	let symbols = req.query.query.split(',');
