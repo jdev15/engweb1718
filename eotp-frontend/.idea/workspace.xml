@@ -95,7 +95,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
@@ -232,16 +232,15 @@
       <workItem from="1527682980779" duration="623000" />
       <workItem from="1528224314573" duration="699000" />
       <workItem from="1528365767926" duration="1016000" />
-      <workItem from="1528801867028" duration="1910000" />
+      <workItem from="1528801867028" duration="2508000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48282000" />
+    <option name="totallyTimeSpent" value="48880000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -282,7 +281,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url />
+          <url>file://$PROJECT_DIR$/../FrontEnd/my-app/src/components/ActiveFrame.js</url>
           <line>9</line>
         </line-breakpoint>
       </breakpoints>

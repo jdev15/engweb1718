@@ -102,11 +102,18 @@ router.get('/', function(req, res, next) {
 // limit = number
 router.get('/from/', function(req,res,next){
 	console.log(req.query);
-	if(!isConnected(req)) sendErrorMsg(res);
-	const symbols = req.query.query.split(',');
+	if(!isConnected(req)false) {
+		sendErrorMsg(res);
+	}else{
+	let symbols = req.query.query.split(',');
+	symbols = symbols.map(s => s.toUpperCase());
 	console.log(symbols);
-	//ativos.then(db => db.find({}))
-	res.send("Hello you.");
+	collection.then(col => col.find({"simbolo": { $in: symbols } },{projection:{'_id':0}}).sort({timestamp:-1}).limit(symbols.length).toArray())
+					.then(list => { console.log(list);res.send(list); })
+					.catch(error => {
+						sendErrorMsg(res);
+					});
+	}
 });
 
 
