@@ -29,7 +29,10 @@ class Page extends React.Component {
             isLoggedIn: !this.state.isLoggedIn
         });
     }
+    // go to the API to get last values
+    getStock(){
 
+    }
 
     render() {
         return (
