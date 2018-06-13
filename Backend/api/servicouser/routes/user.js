@@ -3,8 +3,6 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const JWT = require('../common/jwtprocess');
 
-const sql = require('../common/dbaccess.js');
-
 var db = {};
 var secret = 'engweb2018';
 const token = new JWT({secret: secret});
@@ -127,8 +125,62 @@ router.post('/login', async (req, res) => {
 });
 
 
+
+
+router.post('/changeprofile', async (req, res) => {
+  var exit;
+  const decoded = token.decodeToken(req.body.token);
+  if(!decoded)
+    return res.status(401).json({
+      error: 'UnauthorizedAccess',
+    });
+  const user = decoded.customerId;
+  if(!req.body.pass)
+    await db.getTable('User').update('Username = "'+user+'"')
+    .set('Email', req.body.data.email)
+    .set('PrimeiroNome', req.body.data.fname)
+    .set('UltimoNome', req.body.data.lname)
+    .set('Telemovel', req.body.data.phone).execute()
+    .catch(err => {
+      exit=true;
+      res.status(500).json({
+        errorDBInsert: err
+      });
+    });
+  else
+    bcrypt.hash(req.body.pass, 10, async (err, hash) => {
+      if(err) {
+        exit = true;
+        res.status(500).json({
+          errorHash: err
+        });
+      }
+      if(exit) return;
+      else{
+        await db.getTable('User').update('Username = "'+user+'"')
+        .set('Email', req.body.data.email)
+        .set('Password', hash)
+        .set('PrimeiroNome', req.body.data.fname)
+        .set('UltimoNome', req.body.data.lname)
+        .set('Telemovel', req.body.data.phone).execute()
+        .catch(err => {
+          exit=true;
+          res.status(500).json({
+            errorDBInsert: err
+          });
+        });
+      }
+    });
+  if(!exit)
+    return res.status(200).json({
+      success: 'Updated Profile!',
+    });
+});
+
+
+
 router.post('/addplafond', async (req, res) => {
-  var exit
+  var exit;
   const decoded = token.decodeToken(req.body.token);
   if(!decoded)
     return res.status(401).json({

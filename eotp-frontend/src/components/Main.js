@@ -21,6 +21,7 @@ class Page extends React.Component {
     this.loggedOut = this.loggedOut.bind(this);
     this.isLoggedIn = this.isLoggedIn.bind(this);
     this.changePlafond = this.changePlafond.bind(this);
+    this.changeUserData = this.changeUserData.bind(this);
   }
 
   isLoggedIn() {
@@ -95,6 +96,42 @@ class Page extends React.Component {
     });
   }
 
+  async changeUserData(data, pass) {
+    var values = data; var body;
+    values.plafond = this.state.data.plafond;
+    if(pass) body={
+      token: this.state.JWTToken,
+      data: values,
+      pass: pass,
+    };
+    else body={
+      token: this.state.JWTToken,
+      data: values,
+      pass: '',
+    }
+    //console.log(body);
+    await fetch('http://localhost:4000/user/changeprofile', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    }).then(async (res) => {
+      if(!res.ok) {
+        alert("Erro a atualizar o perfil!");
+        const test = await res.json();
+        console.log(res);
+        console.log(test);
+      }
+      else {
+        this.setState({
+          data: body.data,
+        });
+      }
+    });
+  }
+
   // go to the API to get last values
   getStock(){
 
@@ -107,6 +144,8 @@ class Page extends React.Component {
         <SideBar
           isLoggedIn={this.isLoggedIn}
           loggedIn={this.loggedIn}
+          data={this.state.data}
+          changeUserData={this.changeUserData}
           />
         <TopBar
           isLoggedIn={this.isLoggedIn}

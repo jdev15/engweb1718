@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 
 const sql = require('./common/dbaccess.js');
 const user = require('./routes/user');
+const data = require('./routes/data');
 
 const app = express();
 var db;
@@ -12,11 +13,13 @@ app.use(cors());
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use('/user', user); //para aceder aos metodos de user
+app.use('/data', data)
 
 app.listen(4000, async () => {
   await sql.connectDB();
   db = await sql.dbAccess();
   user.getDB(db); //definir db no modulo user
+  data.getDB(db); //definir 
   console.log('Listening on port 4000');
   console.log(db);
 });

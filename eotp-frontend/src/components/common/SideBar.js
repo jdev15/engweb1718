@@ -68,7 +68,11 @@ class SideBar extends React.Component {
             <a onClick={() =>{this.closeMenu(); this.close();}} style={{cursor:'pointer'}}>Gerir Perfil</a>
         </div>
         </Menu>
-        <Profile showModal={this.state.showModal} close={this.close} />
+        <Profile
+          showModal={this.state.showModal}
+          close={this.close}
+          data={this.props.data}
+          changeUserData={this.props.changeUserData}/>
         </div>
         );
     }

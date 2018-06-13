@@ -2,23 +2,18 @@ import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import '../css/Profile.css';
 
-class Manager extends React.Component {
+class Profile extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-
-    this.open = this.open.bind(this);
-    this.close = this.close.bind(this);
-
     this.state = {
-      showModal: true,
-      email: 'joaonuno.almeida01@gmail.com',
-      password: '12345',
-      username: 'jnalm',
-      pnome: 'João Nuno',
-      lnome: 'Almeida',
-      tlm: '915840330',
+      email: 'placeholder@placeholder.com',
+      password: '',
+      pnome: 'Joe',
+      lnome: 'Placeholder',
+      tlm: 'placeholder',
     };
+    this.packData = this.packData.bind(this);
   }
 
   onChange = (e) => {
@@ -27,20 +22,45 @@ class Manager extends React.Component {
     });
   }
 
-  close() {
-    this.setState({ showModal: false });
+
+
+  componentDidMount() {
+    const temp = this.props.data;
+    this.setState({
+      email: temp.email,
+      pnome: temp.fname,
+      lnome: temp.lname,
+      tlm: temp.phone,
+    });
+    //console.log(this.props.data);
   }
 
-  open() {
-    this.setState({ showModal: true });
+  packData() {
+    const data = {
+      email: this.state.email,
+      fname: this.state.pnome,
+      lname: this.state.lnome,
+      phone: this.state.tlm,
+      credit: {},
+      plafond: 0,
+    }
+    //console.log('test');
+    this.props.close();
+    if(this.state.password)
+      this.props.changeUserData(data, this.state.password);
+    else
+      this.props.changeUserData(data, false);
+    this.setState({
+      password: '',
+    })
   }
+
 
   render() {
-    
     return (
       <div>
         <Modal isOpen={this.props.showModal} toggle={this.props.close}>
-          <ModalHeader closeButton>
+          <ModalHeader toggle={this.props.close}>
             <p>Gerir Conta</p>
           </ModalHeader>
           <ModalBody>
@@ -53,23 +73,14 @@ class Manager extends React.Component {
               onChange = {e => this.onChange(e)}
               value = {this.state.email}
             /><br/>
-            <h5>Username</h5>
-            <input
-              name="username"
-              type="text"
-              onChange = {e => this.onChange(e)}
-              value = {this.state.username}
-            /><br/>
-            <h5>Password</h5>
+            <h5>Nova Password</h5>
             <input
               name="password"
               type="password"
               onChange = {e => this.onChange(e)}
               value = {this.state.password}
             /><br/><br/>
-
             <h4>Dados Pessoais</h4><br/>
-
             <h5>Primeiro Nome</h5>
             <input
               name="pnome"
@@ -94,7 +105,7 @@ class Manager extends React.Component {
 
           </ModalBody>
           <ModalFooter>
-            <Button onClick={this.props.close}>Guardar</Button>
+            <Button onClick={this.packData}>Guardar</Button>
             <Button onClick={this.props.close}>Fechar</Button>
           </ModalFooter>
         </Modal>
@@ -103,4 +114,4 @@ class Manager extends React.Component {
   }
 }
 
-export default Manager;
+export default Profile;
