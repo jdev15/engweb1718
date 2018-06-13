@@ -17,6 +17,7 @@ class TabelaInicial extends React.Component {
           modal:false,
           modal_data: undefined,
           ativo: '',
+          path: "localhost:4500/api/ativos/from"
       };
       this.toggle = this.toggle.bind(this);
   }
@@ -91,8 +92,26 @@ class TabelaInicial extends React.Component {
       this.setState({
           modal: true,
           modal_data:data
-      })
+      });
       console.log(data);
+  }
+
+
+  getStock(){
+    Promise.all( initStocks.map( stock => fetch(`http://${this.state.path}/?query=${stock}`) ) )
+        .then( list => list.map(s => s.json()))
+        .then( promises => Promise.all(promises))
+        .then( values => {console.log(values); return values})
+        .then( values => this.setState({ stocks: values}));
+  }
+
+  getBachStock(){
+    let string = '';
+      initStocks.forEach(s => { string = string + s + ',';});
+           fetch(`http://${this.state.path}/?query=${string}`)
+          .then( list => list.json())
+          .then( values => {console.log(values); return values})
+          .then( values => this.setState({ stocks: values}));
   }
 
   createColumns(){
@@ -100,27 +119,31 @@ class TabelaInicial extends React.Component {
       return [
         {
           Header: "Ativo",
-          accessor: "name"
+          id: "nome",
+          accessor: d => d.nome ? d.nome : ''
         },
         {
-          Header: "Variação 1D (%)",
-          accessor: "var1d",
+            Header: "Variação 1D (%)",
+            id: "var1d",
+            accessor: d => d.variacaos ? (d.variacaos.d1 ? d.variacaos.d1 : '--'): '--'
         },
         {
           Header: "Variação 4H (%)",
-          accessor: "var4h",
+          id:    "var4h",
+          accessor: d => d.variacaos ? (d.variacaos.h4 ? d.variacaos.h4 : '--'): '--'
         },
         {
           Header: "Variação 1H (%)",
-          accessor: "var1h",
+          id: "var1h",
+          accessor: d => d.variacaos ? (d.variacaos.h1 ? d.variacaos.h1 : '--'): '--'
         },
         {
           Header: "Preço de Venda ($)",
-          accessor:"sell_price",
+          id:"preco_de_venda",
 
         },{
           Header: "Preço de Compra ($)",
-          accessor: "buy_price",
+              id:  "preco_de_compra",
         },
         {
           Header: 'Abrir Posição',
@@ -132,28 +155,32 @@ class TabelaInicial extends React.Component {
         }];
     else
       return [
-        {
-          Header: "Ativo",
-          accessor: "name"
-        },
-        {
-          Header: "Variação 1D (%)",
-          accessor: "var1d"
-        },
-        {
-          Header: "Variação 4H (%)",
-          accessor: "var4h"
-        },
-        {
-          Header: "Variação 1H (%)",
-          accessor: "var1h"
-        },
+          {
+              Header: "Ativo",
+              id: "nome",
+              accessor: d => d.nome ? d.nome : ''
+          },
+          {
+              Header: "Variação 1D (%)",
+              id: "var1d",
+              accessor: d => d.variacaos ? (d.variacaos.d1 ? d.variacaos.d1 : '--'): '--'
+          },
+          {
+              Header: "Variação 4H (%)",
+              id:    "var4h",
+              accessor: d => d.variacaos ? (d.variacaos.h4 ? d.variacaos.h4 : '--'): '--'
+          },
+          {
+              Header: "Variação 1H (%)",
+              id: "var1h",
+              accessor: d => d.variacaos ? (d.variacaos.h1 ? d.variacaos.h1 : '--'): '--'
+          },
         {
           Header: "Preço de Venda ($)",
-          accessor:"sell_price"
+          accessor:"preco_de_venda"
         },{
           Header: "Preço de Compra ($)",
-          accessor: "buy_price",
+          accessor: "preco_de_compra",
       }];
     }
 
@@ -184,7 +211,7 @@ class TabelaInicial extends React.Component {
               <Open showModal={this.state.modal} data={this.state.modal_data} close={this.toggle}/>
           </div><br/><br/>
           <footer className="footer">
-            <button type="button" onClick={() => this.processStocks()}>Testar API</button>
+            <button type="button" onClick={() => this.getBachStock()/*this.getStock()this.processStocks()*/}>Testar API</button>
             <a className="add">ADICIONAR ATIVOS</a>
             <div className="icon">
              <input

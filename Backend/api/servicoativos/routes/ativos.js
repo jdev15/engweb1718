@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const jwtprocess = require('./jwtprocess');
-const jwtp = new jwtprocess({ secret:'none'});
+const jwtp = new jwtprocess({ secret:'engweb2018'});
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoClient = require('mongodb').MongoClient;
 const request = require('request-promise-native');
+var cors = require('cors')
 // Read mongoURL and data from file.
 // For now it will be hard coded
 const mongoUrl = 'mongodb://localhost:27017';
@@ -34,6 +35,7 @@ let numberOfSymbols = 14;
 // Necessario para poder extrair conteudo do body dos POSTS/PUTS e outros. NECESSARIOS
 router.use(bodyParser.text());
 router.use(bodyParser.json());
+router.use(cors());
 
 function sendErrorMsg(resposta){
 	if(resposta){
@@ -55,7 +57,7 @@ function sendLastElementsBDData(res){
 	const now = new Date();
 	getSymbols();
 	collection.then(col => col.find({},{projection:{'_id':0}}).sort({timestamp:-1}).limit(numberOfSymbols).toArray())
-					.then(list => { res.send(list) })
+					.then(list => { res.json(list) })
 					.catch(error => {
 						res.status(500);
 						res.send("The server don't answer.");
@@ -69,7 +71,7 @@ function sendPreLastElementsBDData(res){
 	const now = new Date();
 	getSymbols();
 	collection.then(col => col.find({},{projection:{'_id':0}}).sort({timestamp:-1}).limit(numberOfSymbols*2).toArray())
-					.then(list => { res.send(list.slice(numberOfSymbols)) })
+					.then(list => { res.json(list.slice(numberOfSymbols)) })
 					.catch(error => {
 						res.status(500);
 						res.send("The server don't answer.");
@@ -102,7 +104,7 @@ router.get('/', function(req, res, next) {
 // limit = number
 router.get('/from/', function(req,res,next){
 	console.log(req.query);
-	if(!isConnected(req)) {
+	if(/*!isConnected(req)*/false) {
 		sendErrorMsg(res);
 	}else{
 	let symbols = req.query.query.split(',');
@@ -121,11 +123,11 @@ router.get('/symbol/',function(req,res,next){
 	if( req.query.query){
 	const symbols = req.query.query.split(',');
 	symbol.then(db => db.find({"simbolo": { $in: symbols } },{projection:{'_id':0}}).toArray())
-		  .then(list => res.send(list))
+		  .then(list => res.json(list))
 		  .catch(erro => sendErrorMsg(res));
 	}else{
 		symbol.then(db => db.find({},{projection:{'_id':0}}).toArray())
-		  .then(list => res.send(list))
+		  .then(list => res.json(list))
 		  .catch(erro => sendErrorMsg(res));
 	}
 });

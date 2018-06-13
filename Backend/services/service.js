@@ -41,6 +41,11 @@ function isMarketOpen(){
 }
 
 
+function calculatePercentageVariation(passado,presente){
+	return ((presente-passado)/( (presente+passado) /2) ) * 100;
+}
+
+
 //calcula variancia 1h
 function variancia1h(data,indice){
 	const elementValue = data[indice].close;
@@ -152,15 +157,21 @@ function processElement(data,date,symbol){
 
 
 function variancia1h2(data,indice,value){
+
+
 	if( indice < 60){
-		return  value - data[0].marketOpen;
-	}else return value - data[indice-60].marketClose;
+		return calculatePercentageVariation((data[0].marketOpen ? data[0].marketOpen : data[0].close),value );
+		//return  value - data[0].marketOpen;
+	}else //return value - data[indice-60].marketClose;
+		 return calculatePercentageVariation((data[indice-60].marketOpen ? data[indice-60].marketOpen : data[indice-60].close),value )
 }
 
 function variancia4h2(data,indice,value){
 	if( indice < 240){
-		return value - data[0].marketOpen;
-	}else return value - data[indice-240].marketClose;
+		return calculatePercentageVariation((data[0].marketOpen ? data[0].marketOpen : data[0].close),value );
+		//return value - data[0].marketOpen;
+	}else //return value - data[indice-240].marketClose;
+		return calculatePercentageVariation((data[indice-240].marketOpen ? data[indice-240].marketOpen : data[indice-240].close),value );
 }
 
 function processElement2(dados,adata){
@@ -171,28 +182,28 @@ function processElement2(dados,adata){
 	console.log(indice);
 	if( indice < 0 || indice > 390) // fora das horas
 		return; // Não se calcula cenas fora das horas para não dar problemas na BD
+	const preco = dados.quote.latestPrice ? dados.quote.latestPrice: dados.quote.close;	
 	if( indice === 0 || indice === 390){
 			// nos limites usa-se o quote só !!
 			console.log("hello");
 			let variacao1d;
 			if( indice === 390) variacao1d = variancia1d( adata, indice-1,dados.quote);
 			else variacao1d = variancia1d( adata, indice,dados.quote);
-
 			value = variacao1d.then(valor =>  new Promise((a,b) => a({
 							nome: dados.quote.companyName,
 							simbolo: dados.quote.symbol,
-							preco_de_venda: dados.quote.latestPrice,
-							preco_de_compra: dados.quote.latestPrice * 1.03,
+							preco_de_venda: preco,
+							preco_de_compra: preco * 1.03,
 							variacaos: {
-											d1: dados.quote.latestPrice - valor,
+											d1: preco - valor,
 											h4: variancia4h2(dados.chart, indice,dados.quote.latestPrice),
 											h1: variancia1h2(dados.chart, indice,dados.quote.latestPrice)
 							},
 							datetime: {	// dia-mes-ano e hh-mm os segundos (no nosso caso) não são tão importantes
-											date:`${date.getUTCDate()}-${date.getUTCMonth()+1}-${date.getUTCFullYear()}`,
-					 						time: `${date.getUTCHours()}:${date.getUTCMinutes()}`
+											date:`${adata.getUTCDate()}-${adata.getUTCMonth()+1}-${adata.getUTCFullYear()}`,
+					 						time: `${adata.getUTCHours()}:${adata.getUTCMinutes()}`
 					 				  },
-					 		timestamp: date.valueOf()
+					 		timestamp: adata.valueOf()
 							})  ));
 
 	}else { // de resto pode se usar o quote para o preço de venda e compra.
@@ -200,18 +211,18 @@ function processElement2(dados,adata){
 		value = variacao1d.then(valor =>  new Promise((a,b) => a({
 							nome: dados.quote.companyName,
 							simbolo: dados.quote.symbol,
-							preco_de_venda: dados.quote.latestPrice,
-							preco_de_compra: dados.quote.latestPrice * 1.03,
+							preco_de_venda: preco ,
+							preco_de_compra: preco* 1.03,
 							variacaos: {
-											d1: dados.quote.close - valor,
+											d1: preco - valor,
 											h4: variancia4h2(dados.chart, indice,dados.quote.latestPrice),
 											h1: variancia1h2(dados.chart, indice,dados.quote.latestPrice)
 							},
 							datetime: {	// dia-mes-ano e hh-mm os segundos (no nosso caso) não são tão importantes
-											date:`${date.getUTCDate()}-${date.getUTCMonth()+1}-${date.getUTCFullYear()}`,
-					 						time: `${date.getUTCHours()}:${date.getUTCMinutes()}`
+											date:`${adata.getUTCDate()}-${adata.getUTCMonth()+1}-${adata.getUTCFullYear()}`,
+					 						time: `${adata.getUTCHours()}:${adata.getUTCMinutes()}`
 					 				  },
-					 		timestamp: date.valueOf()
+					 		timestamp: adata.valueOf()
 							})  ));
 	}
 	 	return value;

@@ -33,7 +33,7 @@ class Open extends React.Component {
   getInvestment(data) {
     if(data)
       //a ser substituido pelo valor a ser investido
-      return data.buy_price*12
+      return data.buy_price*12;
     else return 0
   }
 
