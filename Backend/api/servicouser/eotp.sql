@@ -94,7 +94,7 @@ ENGINE = InnoDB;
 -- Table `eotp`.`Watchlist`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eotp`.`Watchlist` (
-  `CodigoNASDAQ` INT NOT NULL,
+  `CodigoNASDAQ` VARCHAR(4) NOT NULL,
   `Username` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`CodigoNASDAQ`),
   INDEX `fk_Watchlist_User1_idx` (`Username` ASC),

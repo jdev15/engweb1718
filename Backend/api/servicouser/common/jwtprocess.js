@@ -9,8 +9,12 @@ class JWTProcess {
 		}
 	}
 
+  getSecret() {
+    return this.state.secret;
+  }
+
   createAuthToken (customer) {
-    return jwt.sign({ customerId: customer.id }, this.state.secret);
+    return jwt.sign({ customerId: customer }, this.state.secret);
   };
 
   decodeBearerToken (authHeader) {
@@ -41,7 +45,7 @@ class JWTProcess {
       return jwt.verify(authHeader, this.state.secret);
  	  }catch(e) {
  	  	// statements
- 		 console.log(e);
+ 		 console.log("Invalid signature!");
  		 return false;
  	  }
   }
