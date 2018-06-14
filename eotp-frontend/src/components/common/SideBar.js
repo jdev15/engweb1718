@@ -8,15 +8,14 @@ import '../../css/SideBar.css';
 
 class SideBar extends React.Component {
   constructor(props){
-  super(props);
-  this.state = {
-    menuOpen: false,
-   // isLoggedIn: false,
-    showModal:false
+    super(props);
+    this.state = {
+      menuOpen: false,
+     // isLoggedIn: false,
+      showModal:false
+    }
+    this.close = this.close.bind(this);
   }
-
-  this.close = this.close.bind(this);
-}
 /*
   isLoggedIn = () => {
     return this.state.isLoggedIn;
@@ -69,7 +68,11 @@ class SideBar extends React.Component {
             <a onClick={() =>{this.closeMenu(); this.close();}} style={{cursor:'pointer'}}>Gerir Perfil</a>
         </div>
         </Menu>
-        <Profile showModal={this.state.showModal} close={this.close} />
+        <Profile
+          showModal={this.state.showModal}
+          close={this.close}
+          data={this.props.data}
+          changeUserData={this.props.changeUserData}/>
         </div>
         );
     }
@@ -80,7 +83,7 @@ class SideBar extends React.Component {
         isOpen={this.state.menuOpen}
         onStateChange={(state) => this.handleStateChange(state)}
         >
-        <SideBarLogedout changeLogin={()=>this.props.handle()}/>
+        <SideBarLogedout loggedIn={this.props.loggedIn}/>
         </Menu>
 
         </div>
