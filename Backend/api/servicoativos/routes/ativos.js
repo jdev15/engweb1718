@@ -97,6 +97,14 @@ router.get('/', function(req, res, next) {
 }
 );
 
+function existSimb(elem,array){
+	let exist = false;
+	//console.log(array);
+	array.forEach(s => {if( !exist && elem != s ) exist = s.simbolo === elem.simbolo });
+	//console.log(exist);
+	return exist;
+}
+
 // get on /api/ativos/from/
 // Recupera os ultimos valores de certos ativos.
 // query = sym1,sym2,sym3...
@@ -107,12 +115,16 @@ router.get('/from/', function(req,res,next){
 	if(/*!isConnected(req)*/false) {
 		sendErrorMsg(res);
 	}else{
-	let symbols = req.query.query.split(',');
+
+	let symbols = [];
+	if( req.query.query) symbols = req.query.query.split(',');
 	symbols = symbols.map(s => s.toUpperCase());
 	console.log(symbols);
 	collection.then(col => col.find({"simbolo": { $in: symbols } },{projection:{'_id':0}}).sort({timestamp:-1}).limit(symbols.length).toArray())
-					.then(list => { console.log(list);res.send(list); })
+					.then(list => { let array =[]; list.forEach(s => { if(!existSimb(s, array)) array.push(s);}) ; return array;} )
+					.then(list => { res.send(list); })
 					.catch(error => {
+						console.log(error);
 						sendErrorMsg(res);
 					});
 	}

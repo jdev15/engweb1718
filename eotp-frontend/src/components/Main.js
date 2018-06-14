@@ -30,9 +30,7 @@ class Page extends React.Component {
         });
     }
     // go to the API to get last values
-    getStock(){
 
-    }
 
     render() {
         return (
