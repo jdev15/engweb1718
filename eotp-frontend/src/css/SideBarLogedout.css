@@ -1,0 +1,82 @@
+#root {
+  font-family: 'Exo 2', sans-serif !important;
+  color:#013766;
+  text-align: center;
+}
+
+.login {
+  width: 300px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-header {
+  background: #013766;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: left;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  background: #013766;
+}
+
+.login p {
+  padding: 12px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 90%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 8px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 20px;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="submit"] {
+  background:  #013766;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.6;
+  text-align: left;
+  text-decoration: none;
+}
+
+.login a:link {
+  text-decoration: none;
+}
+
+.login h1 {
+  text-align: center;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 60px;
+  color:  #013766;
+}

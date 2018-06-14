@@ -1,0 +1,86 @@
+.tb {
+	background-color: #013766;
+	overflow: hidden;
+    margin-top: 0px !important;
+	padding: 0.4em;
+	border-bottom: 1px solid #013766;
+
+	a {
+		color: #FFF;
+	}
+
+	a:visited {
+		color: #FFF;
+	}
+
+
+
+	.navWide {
+		display: none;
+		margin: 0 auto;
+
+		.wideDiv {
+			text-align: center;
+
+			a {
+				text-decoration: none;
+				display: inline-block;
+				// Adjust padding to increase/decrease the space between links.
+				padding: 0 2sem;
+			}
+		}
+	}
+
+	// Navbar is set to default with the "hamburger" and links on the left
+	// side of the screen. To move to the right of the screen, simply
+	// change the three "float: Left;" references to read "float: right;".
+	.navNarrow {
+
+		i {
+			float: left;
+			cursor: pointer;
+			color: #FFF;
+		}
+
+		.narrowLinks {
+			display: none;
+
+			a {
+				text-decoration: none;
+				display: block;
+				float: left;
+				clear: left;
+				padding: 0.5em 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 480px) {
+	
+	nav {
+
+		.navWide {
+			display: block;
+		}
+
+		.navNarrow {
+			display: none;
+		}
+	}
+}
+
+.icon {
+  color: white;
+  float: right;
+  font-size: 20px;
+}
+
+.tb{
+	color: white;
+}
+
+.fundos{
+	position:relative;
+	top:3px;
+}

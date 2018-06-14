@@ -1,0 +1,91 @@
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 31px;
+  height: 25px;
+  left: 10px;
+  top: 11px;
+  overflow: hidden;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+  overflow: hidden;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  font-style: 'Exo 2', sans-serif !important;
+  background: #013766;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  overflow: hidden !important;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+  overflow: hidden;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  font-style: 'Exo 2', sans-serif !important;
+  color: #b8b7ad;
+  padding: 0.8em;
+  overflow: hidden;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background-color: black !important;
+  overflow: hidden;
+  opacity: 0.85 !important;
+}
+
+.sb a, p {
+  font-size: 30px;
+  font-style: 'Exo 2', sans-serif !important;
+}
+
+.sbli a:link {
+  font-family: 'Exo 2', sans-serif !important;
+  color: white;
+  padding: 0.8em;
+  overflow: hidden;
+  display: block;
+  text-decoration: none; 
+}
+
+/* visited link */
+.sbli a:visited {
+    color: white;
+}
+
+/* mouse over link */
+.sbli a:hover {
+    color: white;
+}
+
+/* selected link */
+.sbli a:active {
+    color: white;
+}
+
+.sbli {
+  float: left;
+} 

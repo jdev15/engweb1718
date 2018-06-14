@@ -1,0 +1,88 @@
+{
+	"name":	"Envision Healthcare Corporation (EVHC)",
+	"symbol":"EVHC"
+},
+{
+	"name":	"Boston Scientific Corporation (BSX)",
+	"symbol":"BSX"
+},
+{
+	"name":	"Pacific Gas & Electric Co. (PCG)",
+	"symbol":"PCG"
+},
+{
+	"name":	"Intel Corporation (INTC) ",
+	"symbol":"INTC"
+},
+{
+	"name":	"NVIDIA Corporation (NVDA) ",
+	"symbol":"NVDA"
+},
+{
+	"name":	"Microsoft Corporation (MSFT)",
+	"symbol":"MSFT"
+},
+{
+	"name":	"Bank of America Corporation (BAC)",
+	"symbol":"BAC"
+},
+{
+	"name":	"Advanced Micro Devices Inc. (AMD)",
+	"symbol":"AMD"
+},
+{
+	"name":	"Adient plc (ADNT)",
+	"symbol":"ADNT"
+},
+{
+	"name":	"Petroleo Brasileiro S.A.- Petrobras (PBR)",
+	"symbol":"PBR"
+},
+{
+	"name":	"Oracle Corporation (ORCL)",
+	"symbol":"ORCL"
+},
+{
+	"name":	"General Electric Company (GE)",
+	"symbol":"GE"
+},
+{
+	"name":	"Apple Inc. (AAPL)",
+	"symbol":"AAPL"
+},
+{
+	"name":	"Global X MSCI Portugal (PGAL)",
+	"symbol":"PGAL"
+},
+{
+	"name":	"Alphabet Inc.(GOOGL)",
+	"symbol":"GOOGL"
+},
+{
+	"name":	"Alibaba Group Holding Limited(BABA)",
+	"symbol":"BABA"
+},
+{
+	"name":	"International Business Machines Corporation(IBM)",
+	"symbol":"IBM"
+},
+{
+	"name":	"Abraxas Petroleum Corporation(AXAS)",
+	"symbol":"AXAS"
+},
+{
+	"name":	"Total S.A.(TOT)",
+	"symbol":"TOT"
+},
+{
+	"name":	"First Majestic Silver Corp. (Canada)(AG)",
+	"symbol":"AG"
+},
+{
+	"name":	"Randgold Resources Limited(GOLD)",
+	"symbol":"GOLD"
+},{
+
+	"name":	"Tesla Inc. (TSLA)",
+	"symbol":	"TSLA"
+}

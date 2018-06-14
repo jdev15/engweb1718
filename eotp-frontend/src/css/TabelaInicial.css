@@ -1,0 +1,35 @@
+.footer {
+    /* just for demo */
+    background-color: #013766;
+    border-top: 1px solid #013766;
+    text-align:center;
+    padding:0px;
+   /* just for demo */ 
+  
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+}
+
+.add {
+	color: white !important;
+	margin-right: -68%;
+	position: relative;
+}
+
+.footer .icon input[name="adiciona"] {
+	width: 90%;
+	padding: 3px;
+	border-radius: 4px;
+	margin-top: 3px;
+	display: inline-block;
+	font-size: 17px;
+}
+
+.footer button {
+	margin-top: 5px;
+	position: relative;
+	float: left;
+}
