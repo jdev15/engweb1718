@@ -17,9 +17,11 @@ class TabelaInicial extends React.Component {
           modal:false,
           modal_data: undefined,
           ativo: '',
-          path: "localhost:4500/api/ativos/from"
+          path: "192.168.43.86:4500/api/ativos/from",
+          hasUpdated: false,
       };
       this.toggle = this.toggle.bind(this);
+      this.updateInitStocks = this.updateInitStocks.bind(this);
   }
 
     toggle() {
@@ -27,66 +29,6 @@ class TabelaInicial extends React.Component {
             modal: !this.state.modal
         });
     }
-
-  //obtem info dos ativos especificados em initStocks
-  getCell = (data_basic, data_hours, data_day) => {
-    //se os mercados estiverem abertos, calcula as variaçoes necessárias
-    if(data_hours.range==="today") {
-      const size = data_hours.data.length;
-      var one; var four;
-      //os mercados podem nao estar abertos o tempo suficiente para
-      //haver valores de variaçao de 1h ou 4h
-      if(size>60) {
-        //calcular variaçao com base no valor medio sobre o preço mais recente
-        one = 1-((data_hours.data[size-60].average)/(data_basic.latestPrice));
-        //arredondar para 4 casas decimais
-        one = Math.round(one * 10000) / 10000
-      }
-      else one = '---';
-      //4h = 60m * 4 = 240m
-      if(size>240) {
-        four = 1-((data_hours.data[size-240].average)/(data_basic.latestPrice));
-        four = Math.round(four * 10000) / 10000
-      }
-      else four = '---';
-    }
-    else {
-      one='---'; four='---';
-    }
-    var a = {
-      name: data_basic.symbol,
-      var1d: data_day[data_day.length-1].changePercent,
-      var4h: four,
-      var1h: one,
-      sell_price: data_basic.iexBidPrice,
-      buy_price: data_basic.iexAskPrice
-    };
-    return a;
-  };
-
-  processStocks = async () => {
-    var stockInfo = [];
-    for(var i in initStocks) {
-      const stock = initStocks[i];
-      //chamar a api e buscar valores basicos de compra, venda e nome da stock
-      const api_call_basic = await fetch(`https://api.iextrading.com/1.0/stock/${stock}/quote`);
-      const data_basic = await api_call_basic.json();
-      //chamar a api e buscar valores mais antigos de horas
-      const api_call_hours = await fetch(`https://api.iextrading.com/1.0/stock/${stock}/chart/dynamic`);
-      const data_hours = await api_call_hours.json();
-      //chamar a api e buscar valor do ultimo dia
-      const api_call_day = await fetch(`https://api.iextrading.com/1.0/stock/${stock}/chart/ytd`);
-      const data_day = await api_call_day.json();
-      
-      //processa valores para formato aceitavel pela tabela
-      const value = this.getCell(data_basic, data_hours, data_day);
-      //insere valor processado para o array que será inserido na tabela
-      stockInfo.push(value);
-    }
-    this.setState({
-      stocks: stockInfo,
-    });
-  };
 
   updateState(data){
       this.setState({
@@ -140,10 +82,12 @@ class TabelaInicial extends React.Component {
         {
           Header: "Preço de Venda ($)",
           id:"preco_de_venda",
+          accessor: 'preco_de_venda'
 
         },{
           Header: "Preço de Compra ($)",
-              id:  "preco_de_compra",
+          id:  "preco_de_compra",
+          accessor: 'preco_de_compra'
         },
         {
           Header: 'Abrir Posição',
@@ -203,15 +147,42 @@ class TabelaInicial extends React.Component {
     }
   }
 
+  async updateInitStocks(token) {
+    //console.log('infunction: '+token);
+    await fetch('http://localhost:4000/data/getwatchlist', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        authorization: token,
+      },
+    }).then(async (res) => {
+      if(!res.ok) {
+        alert("Erro a definir ativos do User!");
+        const test = await res.json();
+        console.log(res);
+        console.log(test);
+      }
+      else {
+        const proc = await res.json();
+        initStocks = proc.data;
+        console.log(initStocks);
+      }
+    })
+  }
+
   render(){
+    if(this.props.isLoggedIn && this.props.token && !this.state.hasUpdated) {
+      this.updateInitStocks(this.props.token);
+    }
     return(
       <div>
         <TabelaModelo columns={this.createColumns()} data={this.state.stocks}/>
           <div className={"modal_close"}>
-              <Open showModal={this.state.modal} data={this.state.modal_data} close={this.toggle}/>
+              <Open showModal={this.state.modal} data={this.state.modal_data} close={this.toggle} token={this.props.token} plafond={this.props.plafond}/>
           </div><br/><br/>
           <footer className="footer">
-            <button type="button" onClick={() => this.getBachStock()/*this.getStock()this.processStocks()*/}>Testar API</button>
+            <button type="button" onClick={() => this.getBachStock()/*this.getStock()this.processStocks()*/}>Buscar ativos</button>
             <a className="add">ADICIONAR ATIVOS</a>
             <div className="icon">
              <input

@@ -2,7 +2,7 @@ const mysqlx = require('@mysql/xdevapi');
 
 const config = {
   user: 'root',
-  password: '',
+  password: 'Duke3D',
   host: 'localhost',
   port: 33060,
   schema: 'eotp'
@@ -15,7 +15,7 @@ async function connectDB() {
   try{
     session = await mysqlx.getSession(config);
     db = await session.getSchema(config.schema);
-    //console.log(session.inspect(), db);
+    console.log(session.inspect(), db);
   }
   catch (err) {
     console.error('ERROR: '+err.message);

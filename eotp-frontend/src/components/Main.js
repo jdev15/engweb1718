@@ -31,12 +31,15 @@ class Page extends React.Component {
 
   loggedIn(u, t, d) {
     this.setState({
-        isLoggedIn: true,
         user: u,
         JWTToken: t,
         data: d,
     });
-    //console.log(d);
+
+    this.setState({
+      isLoggedIn: true,
+    })
+    //console.log(t);
     //console.log(this.state);
   }
 
@@ -132,8 +135,15 @@ class Page extends React.Component {
     });
   }
 
+  // go to the API to get last values
+  getStock(){
+
+  }
+
 
   render() {
+    if(this.isLoggedIn)
+      console.log(this.state.JWTToken);
     return (
       <div>
         <SideBar
@@ -150,11 +160,11 @@ class Page extends React.Component {
           changePlafond={this.changePlafond}/>
         <main>
           <Switch>
-            <Route path='/TabelaInicial' render = {(props) => (<TabelaInicial isLoggedIn={this.state.isLoggedIn}/>)} />
+            <Route path='/TabelaInicial' render = {(props) => (<TabelaInicial isLoggedIn={this.state.isLoggedIn} token={this.state.JWTToken} plafond={this.state.data.plafond}/>)} />
             <Route path='/SignIn' component={SignIn}/>
-            <Route path='/TabelaInvestimento' component={TabelaInvestimento}/>
-            <Route path='/TabelaHistorico' component={TabelaHistorico}/>
-            <Route exact path='/' render = {(props) => (<TabelaInicial isLoggedIn={this.state.isLoggedIn}/>)} />
+            <Route path='/TabelaInvestimento' render = {(props) => <TabelaInvestimento token={this.state.JWTToken}/>}/>
+            <Route path='/TabelaHistorico' component={(props) => <TabelaHistorico token={this.state.JWTToken}/>}/>
+            <Route exact path='/' render = {(props) => (<TabelaInicial isLoggedIn={this.state.isLoggedIn} token={this.state.JWTToken} plafond={this.state.data.plafond}/>)} />
             <Route exact path='/' component={SignIn}/>
             <Route exact path='/' component={TabelaInvestimento}/>
             <Route exact path='/' component={TabelaHistorico}/>

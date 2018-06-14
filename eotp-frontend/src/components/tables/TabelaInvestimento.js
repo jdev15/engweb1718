@@ -1,35 +1,25 @@
 import React from 'react';
+import { Button } from 'reactstrap';
+import Dollar from 'react-icons/lib/fa/dollar';
 import TabelaModelo from '../common/TabelaModelo.js'
 
 
 const invCol = [
 {
   Header: "Ativo",
-  accessor: "name"
-},
-{
-  Header: "Preço Fecho ($)",
-  id: "close_price",
-  accessor: "close_price"
-},
-{
-  Header: "Preço Abertura ($)",
-  accessor: "open_price"
+  accessor: "symbol"
 },
 {
   Header: 'Unidades Adquiridas',
   accessor: 'units'
 },
 {
-  Header: "Preço de Venda ($)",
-  accessor:"sell_price"
-},{
-  Header: "Preço de Compra ($)",
-  id: "precocompra",
-  accessor: d => (d.sell_price * 1.02).toFixed(2)
-},{
   Header: "Valor Investido",
-  accessor: "invested"
+  accessor: "investment"
+},
+{
+  Header: "Preço Original ($)",
+  accessor:"value"
 },
 {
   Header: 'Ganho/Perda ($)',
@@ -41,20 +31,53 @@ const invCol = [
 },
 {
   Header: "Fechar Posição",
-  accessor: "invested",
-  maxWidth: 120
+  Cell: row => (
+      <Button color="primary" onClick={()=> {this.updateState(row.original);}}><Dollar /></Button>
+  ),
+  sortable: false,
+  style:{overflow:'visible'},
 }];
 
 class TabelaInvestimento extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      data: [],
+      token: this.props.token,
+    };
+  }
+
+  
+
+  async componentDidMount() {
+    console.log(this.state.token);
+    await fetch('http://localhost:4000/data/getportfolio', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        authorization: this.state.token,
+      },
+    }).then(async (res) => {
+      if(!res.ok) {
+        alert("Erro ao buscar portfolio!");
+        const test = await res.json();
+        console.log(res);
+        console.log(test);
+      }
+      else {
+        const values = await res.json();
+        this.setState({
+          data: values.data,
+        })
+      }
+    })
+  }
+
   render() {
     return(
     <div>
-      <TabelaModelo data={[{
-                  name:"APPLE",
-                  close_price:"325.6",
-                  open_price:"325.96",
-                  sell_price: "321.77",
-                  invested: "100"}]}
+      <TabelaModelo data={this.state.data}
                   columns={invCol} />
     </div>
     );

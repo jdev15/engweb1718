@@ -37,7 +37,7 @@ class JWTProcess {
   }
 
   decodeToken(authHeader){
-  	console.log(authHeader);
+  	//console.log(authHeader);
     if (!authHeader) {
       return false;
     }

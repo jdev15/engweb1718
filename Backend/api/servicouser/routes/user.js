@@ -56,9 +56,18 @@ router.post('/register', async (req, res) => {
       .values("MSFT", req.body.username)
       .values("AAPL", req.body.username).execute()
       .catch(err => {
-        error=true;
+        exit=true;
         res.status(500).json({
           errorDBInsert2: err
+        });
+      });
+      //insere user no portfolio
+      await db.getTable('Portfolio').insert('Username')
+      .values(req.body.username).execute()
+      .catch(err => {
+        exit=true;
+        res.status(500).json({
+          errorDBInsert3: err
         });
       });
       if(!exit)
@@ -81,7 +90,7 @@ router.post('/login', async (req, res) => {
       userExists = true;
       pass=response[2].trim();
       var CC = {};
-      if(res[6]) CC = res[i+6].trim();
+      if(response[6]) CC = response[i+6].trim();
       userdata = {
         email: response[1].trim(),
         fname: response[3].trim(),

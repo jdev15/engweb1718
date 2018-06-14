@@ -48,7 +48,15 @@ class SignIn extends Component {
           username: this.state.username,
           tlm: this.state.tlm,
         }),
-      });
+      })
+      .then(async (res) => {
+        if(!res.ok) {
+          alert("Erro a adicionar user!");
+          const test = await res.json();
+          console.log(res);
+          console.log(test);
+        }
+      })
     }
   }
 
