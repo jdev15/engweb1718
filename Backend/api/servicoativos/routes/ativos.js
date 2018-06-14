@@ -112,7 +112,7 @@ function existSimb(elem,array){
 // limit = number
 router.get('/from/', function(req,res,next){
 	console.log(req.query);
-	if(/*!isConnected(req)*/false) {
+	if(/*!isConnected(req)*/false) {////
 		sendErrorMsg(res);
 	}else{
 

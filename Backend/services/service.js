@@ -115,9 +115,9 @@ function getLast(data){
 }
 
 function calculaIndice(date){
-	// 14:30 até 21h UTC
+	// 13:30 até 20h UTC
 	// 9:30 até 16h
-	return (date.getUTCHours() * 60 + date.getUTCMinutes()) - 870;
+	return (date.getUTCHours() * 60 + date.getUTCMinutes()) - 810;
 }
 
 function processElement(data,date,symbol){
@@ -158,7 +158,7 @@ function processElement(data,date,symbol){
 
 function variancia1h2(data,indice,value){
 
-
+	if( data.length === 0) return undefined;
 	if( indice < 60){
 		return calculatePercentageVariation((data[0].marketOpen ? data[0].marketOpen : data[0].close),value );
 		//return  value - data[0].marketOpen;
@@ -167,6 +167,7 @@ function variancia1h2(data,indice,value){
 }
 
 function variancia4h2(data,indice,value){
+	if( data.length === 0) return undefined;
 	if( indice < 240){
 		return calculatePercentageVariation((data[0].marketOpen ? data[0].marketOpen : data[0].close),value );
 		//return value - data[0].marketOpen;
@@ -287,6 +288,6 @@ function updateDB2(){
 }
 
 
-setInterval(() =>console.log(updateDB2()) , timer)
+setInterval(() =>updateDB2() , timer)
 //console.log(isMarketOpen());
 updateDB2();
