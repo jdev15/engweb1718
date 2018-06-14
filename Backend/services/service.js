@@ -289,4 +289,4 @@ function updateDB2(){
 
 setInterval(() =>console.log(updateDB2()) , timer)
 //console.log(isMarketOpen());
-updateDB();
+updateDB2();

@@ -10,29 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54">
-              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TabelaInicial.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/tables/TabelaInicial.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1343">
-              <caret line="9" column="61" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="62" />
-              <folding>
-                <element signature="n#!!block;n#createColumns#0;n#TabelaInicial#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -99,7 +77,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="525" />
@@ -251,16 +229,15 @@
       <workItem from="1528801867028" duration="2508000" />
       <workItem from="1528884509631" duration="845000" />
       <workItem from="1528885567420" duration="5578000" />
-      <workItem from="1528968003309" duration="1960000" />
+      <workItem from="1528968003309" duration="2581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57263000" />
+    <option name="totallyTimeSpent" value="57884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -301,7 +278,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url />
+          <url>file://$PROJECT_DIR$/../FrontEnd/my-app/src/components/ActiveFrame.js</url>
           <line>9</line>
         </line-breakpoint>
       </breakpoints>
@@ -484,41 +461,41 @@
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>JavaScript-modules-diagram</ID>
-          <OriginalElement />
+          <OriginalElement>$PROJECT_DIR$/src</OriginalElement>
           <nodes>
-            <node x="" y="" />
-            <node x="" y="" />
+            <node x="" y="">$PROJECT_DIR$/src/App.js#Main#34;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/App.js#React#7;</node>
+            <node x="" y="">$PROJECT_DIR$/src/App.test.js#App#68;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/App.test.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/App.test.js#ReactDOM#34;</node>
             <node x="" y="">slide;</node>
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
+            <node x="" y="">$PROJECT_DIR$/src/components/Main.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Main.js#Route#44;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Main.js#SideBar#285;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Main.js#SignIn#84;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Main.js#Switch#36;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Main.js#TabelaHistorico#229;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Main.js#TabelaInicial#115;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Main.js#TabelaInvestimento#167;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Main.js#TopBar#325;</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/Open.js#Button#36;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Open.js#FormGroup#88;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Open.js#Input#106;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Open.js#Label#99;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Open.js#Modal#44;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Open.js#ModalBody#64;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Open.js#ModalFooter#75;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Open.js#ModalHeader#51;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Open.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Open.js#window.css#133;</node>
+            <node x="" y="">$PROJECT_DIR$/src/css/Profile.css</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/Profile.js#Button#36;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Profile.js#Modal#44;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Profile.js#ModalBody#64;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Profile.js#ModalFooter#75;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Profile.js#ModalHeader#51;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Profile.js#Profile.css#108;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Profile.js#React#7;</node>
+            <node x="" y="">$PROJECT_DIR$/src/css/SideBar.css</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/common/SideBar.js#Link#137;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/SideBar.js#Menu#86;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/SideBar.js#Profile#176;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/SideBar.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/SideBar.js#SideBar.css#208;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/SideBar.js#SideBarLogedout#34;</node>
+            <node x="" y="">$PROJECT_DIR$/src/css/SideBarLogedout.css</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/SideBarLogedout.js#Link#73;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/SideBarLogedout.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/SideBarLogedout.js#SideBarLogedout.css#27;</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/SignIn.js#Component#16;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/SignIn.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/SignIn.js#signin.css#102;</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/tables/TabelaHistorico.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/tables/TabelaHistorico.js#TabelaModelo#34;</node>
+            <node x="" y="">$PROJECT_DIR$/src/css/TabelaInicial.css</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/tables/TabelaInicial.js#Button#36;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/tables/TabelaInicial.js#Dollar#71;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/tables/TabelaInicial.js#Open#209;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/tables/TabelaInicial.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/tables/TabelaInicial.js#TabelaInicial.css#232;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/tables/TabelaInicial.js#TabelaModelo#119;</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/tables/TabelaInvestimento.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/tables/TabelaInvestimento.js#TabelaModelo#34;</node>
+            <node x="" y="">$PROJECT_DIR$/src/css/TabelaModelo.css</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/common/TabelaModelo.js#Component#16;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/TabelaModelo.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/TabelaModelo.js#ReactTable#49;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/TabelaModelo.js#TabelaModelo.css#118;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/TabelaModelo.js#react-table.css#80;</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/common/TopBar.js#Nav#73;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/TopBar.js#NavItem#77;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/TopBar.js#Navbar#66;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/TopBar.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/TopBar.js#Window#113;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/common/TopBar.js#topbar.css#27;</node>
+            <node x="" y="">$PROJECT_DIR$/src/components/Window.js#Button#36;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Window.js#Modal#44;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Window.js#ModalBody#64;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Window.js#ModalFooter#75;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Window.js#ModalHeader#51;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Window.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Window.js#bootstrap.css#135;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/components/Window.js#window.css#108;</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/react-icons/lib/fa/dollar.js</node>
+            <node x="" y="">$PROJECT_DIR$/src/index.js#App#128;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/index.js#BrowserRouter#69;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/index.js#React#7;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/src/index.js#ReactDOM#34;</node>
             <node x="" y="">BrowserRouter;Link;Route;Switch;</node>
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
-            <node x="" y="" />
+            <node x="" y="">$PROJECT_DIR$/node_modules/react-dom/index.js</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/react/index.js</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/react-table/lib/index.js</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/react-table/react-table.css</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/react/cjs/react.development.js#Component#45259;</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/reactstrap/dist/reactstrap.es.js#Button#30841;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#FormGroup#134746;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#Input#137096;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#Label#145461;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#Modal#112850;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#ModalBody#122473;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#ModalFooter#123138;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#ModalHeader#121102;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#Nav#18229;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#NavItem#19493;D:/LEI/4º_Ano/2ºSemestre/Perfil Engenharia de Sistemas de Software/Engenharia Web/Trabalho pratico/GIT/engweb1718/eotp-frontend/node_modules/reactstrap/dist/reactstrap.es.js#Navbar#14829;</node>
+            <node x="" y="">$PROJECT_DIR$/src/css/signin.css</node>
+            <node x="" y="">$PROJECT_DIR$/src/css/topbar.css</node>
+            <node x="" y="">$PROJECT_DIR$/src/css/window.css</node>
           </nodes>
           <notes />
           <edges />
@@ -562,20 +539,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/tables/TabelaInicial.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1343">
-          <caret line="9" column="61" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="62" />
-          <folding>
-            <element signature="n#!!block;n#createColumns#0;n#TabelaInicial#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-54">
           <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/tables/TabelaInicial.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-191">
+          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+          <folding>
+            <element signature="e#884#1984#0" />
+            <element signature="e#2017#3056#0" />
+            <element signature="n#!!block;n#createColumns#0;n#TabelaInicial#0" />
+          </folding>
         </state>
       </provider>
     </entry>
